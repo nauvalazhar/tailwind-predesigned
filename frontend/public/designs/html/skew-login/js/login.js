@@ -5,10 +5,10 @@ $('#apt-login-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const usernameField = $('#apt-username'),
-  		passwordField = $('#apt-password');
+    passwordField = $('#apt-password');
 
   const username = usernameField.value.trim(),
-  		password = passwordField.value.trim();
+    password = passwordField.value.trim();
 
   if(username.length < 1) return usernameField.focus();
   else if(password.length < 1) return passwordField.focus();
@@ -23,9 +23,9 @@ $('#apt-login-form').addEventListener('submit', function (e) {
     },
     body: body
   })
-  .then(res => res.json())
-  .then(res => {
-    console.log(res);
-  });
+    .then(res => res.json())
+    .then(res => {
+      console.log(res);
+    });
 });
 
