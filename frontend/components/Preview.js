@@ -18,7 +18,7 @@ function Preview() {
         payload: `${breakpoint}x${previewFrame.current.clientHeight}`,
       });
     }
-  }, [size]);
+  }, [size, dispatch]);
 
   if (loadingDesign) return <div>Loading ...</div>;
 

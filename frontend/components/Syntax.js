@@ -1,7 +1,5 @@
-import { useEditorContext } from '@contexts/EditorContext';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark as shStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import PropTypes from 'prop-types';
 import { useDesign, useSourceCode } from '@hooks';
 
 function Syntax() {

@@ -1,4 +1,6 @@
 module.exports = {
+  swcMinify: true,
+  ignoreDuringBuilds: true,
   serverRuntimeConfig: {
     PROJECT_ROOT: __dirname,
   },

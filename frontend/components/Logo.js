@@ -1,15 +1,14 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 function Logo({ scheme, ...props }) {
   return (
     <>
-      {scheme === "light" ? (
+      {scheme === 'light' ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 42 42"
-          {...props}
-        >
+          {...props}>
           <path
             fill="#fff"
             d="M0 21C0 0 0 0 21 0s21 0 21 21 0 21-21 21S0 42 0 21z"
@@ -58,8 +57,7 @@ function Logo({ scheme, ...props }) {
               x2="32.5"
               y1="5.5"
               y2="36"
-              gradientUnits="userSpaceOnUse"
-            >
+              gradientUnits="userSpaceOnUse">
               <stop stopColor="#5278FF" />
               <stop offset="1" stopColor="#2753F0" stopOpacity="0" />
             </linearGradient>
@@ -70,8 +68,7 @@ function Logo({ scheme, ...props }) {
           viewBox="0 0 42 42"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          {...props}
-        >
+          {...props}>
           <path
             d="M0 21C0 0 0 0 21 0s21 0 21 21 0 21-21 21S0 42 0 21z"
             fill="#2753F0"
@@ -112,8 +109,7 @@ function Logo({ scheme, ...props }) {
               y1={5.5}
               x2={32.5}
               y2={36}
-              gradientUnits="userSpaceOnUse"
-            >
+              gradientUnits="userSpaceOnUse">
               <stop stopColor="#5278FF" />
               <stop offset={1} stopColor="#2753F0" stopOpacity={0} />
             </linearGradient>
@@ -125,11 +121,11 @@ function Logo({ scheme, ...props }) {
 }
 
 Logo.defaultProps = {
-  scheme: "dark",
+  scheme: 'dark',
 };
 
 Logo.propTypes = {
-  scheme: PropTypes.oneOf(["light", "dark"]),
+  scheme: PropTypes.oneOf(['light', 'dark']),
 };
 
 export default Logo;
