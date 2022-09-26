@@ -10,7 +10,7 @@ function Syntax() {
 
   return (
     <div className="overflow-auto h-full">
-      {design.type === 'page' ? (
+      {design.data.type === 'page' ? (
         <div className="w-full h-full flex items-center justify-center flex-col">
           <div className="text-8xl mb-7">🤯</div>
           <h2 className="text-2xl text-white">
