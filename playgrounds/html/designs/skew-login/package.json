@@ -1,0 +1,15 @@
+{
+  "name": "skew-login",
+  "description": "Skew login page design.",
+  "tailwind_predesigned": {
+    "techs": [
+      "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "forms"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}

@@ -1,0 +1,87 @@
+@layout('layouts::layout')
+
+@set('title', 'Pantone Login')
+@set('rawBody', '<body class="bg-gradient-to-b from-blue-600 to-blue-900">')
+
+@section('content')
+		<div class="flex justify-center">
+			<div class="w-full px-8 sm:px-0 sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12 xxl:w-4/12 py-20">
+				<div class="text-center mb-12">
+					<svg class="inline-block" width="200" viewBox="0 0 178 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="1" y="1" width="62" height="62" rx="9" stroke="white" stroke-width="2"></rect>
+						<circle cx="29.5" cy="29.5" r="16.5" fill="white"></circle>
+						<circle cx="41" cy="41" r="10" fill="white" fill-opacity="0.8"></circle>
+						<path d="M89.536 41V35.432L84.808 25.352H88.6L89.992 28.952C90.216 29.544 90.424 30.12 90.616 30.68C90.824 31.224 91.04 31.8 91.264 32.408H91.36C91.584 31.8 91.8 31.224 92.008 30.68C92.232 30.12 92.456 29.544 92.68 28.952L94.096 25.352H97.792L93.064 35.432V41H89.536Z" fill="white"></path>
+						<path d="M102.969 41.288C102.217 41.288 101.489 41.152 100.785 40.88C100.081 40.592 99.4569 40.184 98.9129 39.656C98.3849 39.128 97.9609 38.48 97.6409 37.712C97.3209 36.928 97.1609 36.04 97.1609 35.048C97.1609 34.056 97.3209 33.176 97.6409 32.408C97.9609 31.624 98.3849 30.968 98.9129 30.44C99.4569 29.912 100.081 29.512 100.785 29.24C101.489 28.952 102.217 28.808 102.969 28.808C103.721 28.808 104.441 28.952 105.129 29.24C105.833 29.512 106.449 29.912 106.977 30.44C107.521 30.968 107.953 31.624 108.273 32.408C108.593 33.176 108.753 34.056 108.753 35.048C108.753 36.04 108.593 36.928 108.273 37.712C107.953 38.48 107.521 39.128 106.977 39.656C106.449 40.184 105.833 40.592 105.129 40.88C104.441 41.152 103.721 41.288 102.969 41.288ZM102.969 38.432C103.689 38.432 104.233 38.128 104.601 37.52C104.969 36.912 105.153 36.088 105.153 35.048C105.153 34.008 104.969 33.184 104.601 32.576C104.233 31.968 103.689 31.664 102.969 31.664C102.233 31.664 101.681 31.968 101.313 32.576C100.961 33.184 100.785 34.008 100.785 35.048C100.785 36.088 100.961 36.912 101.313 37.52C101.681 38.128 102.233 38.432 102.969 38.432Z" fill="white"></path>
+						<path d="M114.745 41.288C113.449 41.288 112.505 40.864 111.913 40.016C111.337 39.168 111.049 37.992 111.049 36.488V29.096H114.577V36.032C114.577 36.896 114.697 37.488 114.937 37.808C115.177 38.128 115.553 38.288 116.065 38.288C116.513 38.288 116.889 38.184 117.193 37.976C117.497 37.768 117.825 37.432 118.177 36.968V29.096H121.705V41H118.825L118.561 39.344H118.489C117.977 39.952 117.425 40.432 116.833 40.784C116.257 41.12 115.561 41.288 114.745 41.288Z" fill="white"></path>
+						<path d="M124.81 41V29.096H127.69L127.93 31.184H128.026C128.458 30.368 128.978 29.768 129.586 29.384C130.194 29 130.802 28.808 131.41 28.808C131.746 28.808 132.018 28.832 132.226 28.88C132.45 28.912 132.65 28.968 132.826 29.048L132.25 32.096C132.026 32.032 131.818 31.984 131.626 31.952C131.434 31.92 131.21 31.904 130.954 31.904C130.506 31.904 130.034 32.064 129.538 32.384C129.058 32.704 128.658 33.272 128.338 34.088V41H124.81Z" fill="white"></path>
+						<path d="M143.137 33.08L142.753 34.52H146.089L145.729 33.08C145.505 32.296 145.289 31.464 145.081 30.584C144.873 29.704 144.665 28.856 144.457 28.04H144.361C144.169 28.872 143.969 29.728 143.761 30.608C143.569 31.472 143.361 32.296 143.137 33.08ZM137.473 41L142.369 25.352H146.617L151.513 41H147.769L146.809 37.28H142.033L141.073 41H137.473Z" fill="white"></path>
+						<path d="M152.935 45.416V29.096H155.815L156.055 30.272H156.151C156.615 29.856 157.135 29.512 157.711 29.24C158.303 28.952 158.911 28.808 159.535 28.808C160.255 28.808 160.903 28.952 161.479 29.24C162.055 29.528 162.543 29.936 162.943 30.464C163.343 30.992 163.647 31.632 163.855 32.384C164.079 33.12 164.191 33.944 164.191 34.856C164.191 35.88 164.047 36.792 163.759 37.592C163.487 38.376 163.111 39.048 162.631 39.608C162.167 40.152 161.631 40.568 161.023 40.856C160.431 41.144 159.815 41.288 159.175 41.288C158.663 41.288 158.167 41.184 157.687 40.976C157.207 40.752 156.759 40.44 156.343 40.04L156.463 41.936V45.416H152.935ZM158.359 38.408C158.967 38.408 159.487 38.136 159.919 37.592C160.351 37.032 160.567 36.136 160.567 34.904C160.567 32.76 159.879 31.688 158.503 31.688C157.815 31.688 157.135 32.048 156.463 32.768V37.64C156.783 37.928 157.103 38.128 157.423 38.24C157.743 38.352 158.055 38.408 158.359 38.408Z" fill="white"></path>
+						<path d="M166.693 45.416V29.096H169.573L169.813 30.272H169.909C170.373 29.856 170.893 29.512 171.469 29.24C172.061 28.952 172.669 28.808 173.293 28.808C174.013 28.808 174.661 28.952 175.237 29.24C175.813 29.528 176.301 29.936 176.701 30.464C177.101 30.992 177.405 31.632 177.613 32.384C177.837 33.12 177.949 33.944 177.949 34.856C177.949 35.88 177.805 36.792 177.517 37.592C177.245 38.376 176.869 39.048 176.389 39.608C175.925 40.152 175.389 40.568 174.781 40.856C174.189 41.144 173.573 41.288 172.933 41.288C172.421 41.288 171.925 41.184 171.445 40.976C170.965 40.752 170.517 40.44 170.101 40.04L170.221 41.936V45.416H166.693ZM172.117 38.408C172.725 38.408 173.245 38.136 173.677 37.592C174.109 37.032 174.325 36.136 174.325 34.904C174.325 32.76 173.637 31.688 172.261 31.688C171.573 31.688 170.893 32.048 170.221 32.768V37.64C170.541 37.928 170.861 38.128 171.181 38.24C171.501 38.352 171.813 38.408 172.117 38.408Z" fill="white"></path>
+					</svg>
+				</div>
+				<!-- just form -->
+				<form id="apt-login-form" autocomplete="off">
+					<!-- Card outer -->
+					<div class="bg-white shadow-md rounded-lg border-t-2 border-blue-500">
+						<!-- Card header -->
+						<div class="sm:px-16 sm:pt-16 px-8 pt-8">
+							<h2 class="md:text-3xl text-2xl text-center text-blue-500 font-semibold">Sign in to your account</h2>
+						</div>
+
+						<!-- Card body -->
+						<div class="sm:p-16 sm:py-10 p-8">
+							<!-- form group -->
+							<div class="mb-6">
+								<label class="text-gray-600 inline-block mb-2 text-sm" for="apt-username">Username</label>
+								<input id="apt-username" class="transition duration-200 block w-full py-3 px-5 border-2 border-gray-300 focus:border-blue-500 rounded text-sm" type="text" name="username">
+							</div>
+							<!-- form group -->
+							<div class="mb-6">
+								<label class="text-gray-600 w-full inline-flex mb-2 text-sm" for="apt-password">
+									Password
+
+									<a href="#" class="ml-auto text-blue-500 hover:underline transition duration-200">Forgot Password?</a>
+								</label>
+								<div class="flex items-center relative">
+									<input id="apt-password" class="transition duration-200 block w-full py-3 px-5 border-2 border-gray-300 focus:border-blue-500 rounded text-sm pr-10" type="password" name="password">
+									<a class="absolute right-0 mr-3 cursor-pointer" data-toggle="password" data-target="#apt-password" data-class-active="text-blue-500">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+									</a>
+								</div>
+							</div>
+
+							<!-- remember me -->
+							<label class="flex items-center">
+							  <input type="checkbox" class="form-checkbox text-blue-500">
+							  <span class="ml-2 text-gray-600 text-sm">Remember me</span>
+							</label> <!-- /remember me -->
+
+							<!-- login -->
+							<button id="apt-button-login" class="transition duration-200 bg-blue-500 hover:bg-blue-700 py-4 px-6 mt-6 rounded shadow-md hover:shadow-none text-white block w-full" type="submit">
+								Log In
+							</button>
+
+						</div> <!-- /card body -->
+						<div class="text-center sm:px-16 sm:py-8 px-8 py-6 bg-gray-100 rounded-bl rounded-br">
+							<p class="text-sm text-gray-600">Don't have an account? <a href="#" class="text-blue-500 hover:underline font-semibold">Register now</a>.</p>
+						</div> <!-- /card footer -->
+					</div> <!-- /card outer -->
+				</form> <!-- /just form -->
+				<div class="flex mt-6 text-sm">
+					<p class="text-gray-400">&copy; Your App</p>
+
+					<div class="flex -mx-2 ml-auto">
+						<a class="mx-2 transition duration-200 text-gray-400 hover:underline" href="#">Privacy Policy</a>
+						<a class="mx-2 transition duration-200 text-gray-400 hover:underline" href="#">Terms of Service</a>
+					</div>
+				</div> <!-- /copyright -->
+			</div> <!-- /flex item -->
+		</div> <!-- /flex container -->
+@endsection
+
+@section('beforeend')
+ 	<script src="https://cdn.jsdelivr.net/npm/vanilla-js-show-hide-password@1.0.0/toggle-password.js"></script>
+	<script src="js/login.js"></script> 
+@endsection
+

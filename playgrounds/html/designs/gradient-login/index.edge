@@ -1,0 +1,107 @@
+@layout('layouts::layout')
+
+@set('title', 'Gradient Login')
+@set('rawBody', '<body class="bg-gradient-to-r from-indigo-500 to-indigo-700">')
+
+@section('content')
+  <div class="container mx-auto px-16 sm:px-0 my-24">
+    <!-- flex container -->
+    <div class="flex lg:flex-row flex-col -mx-8 items-center">
+      <!-- flex item -->
+      <div class="lg:w-5/12 w-full flex-shrink-0 mx-8 mb-10 lg:mb-0">
+        <!-- just form -->
+        <form id="apt-login-form" autocomplete="off">
+          <!-- Card outer -->
+          <div class="bg-white shadow-md rounded-lg border-t-2 border-indigo-500">
+            <!-- Card header -->
+            <div class="sm:px-16 sm:pt-16 px-6 pt-6">
+              <h2 class="md:text-3xl text-2xl">Sign in to <span class="text-indigo-500 font-bold">your account</span></h2>
+              <h4 class="mt-2 leading-6 text-gray-600 font-light text-sm md:text-base">Welcome, before starting, make sure you have an account.</h4>
+            </div>
+
+            <!-- Card body -->
+            <div class="sm:p-16 sm:pt-10 p-6">
+              <!-- form group -->
+              <div class="mb-6">
+                <label class="text-gray-600 inline-block mb-2 text-sm" for="apt-username">Username</label>
+                <input id="apt-username" class="transition duration-200 block w-full py-3 px-5 border-2 border-gray-300 focus:border-indigo-500 rounded text-sm" type="text" name="username">
+              </div>
+              <!-- form group -->
+              <div class="mb-6">
+                <label class="text-gray-600 w-full inline-flex mb-2 text-sm" for="apt-password">
+                  Password
+
+                  <a href="#" class="ml-auto text-indigo-500 hover:underline transition duration-200">Forgot Password?</a>
+                </label>
+                <div class="flex items-center relative">
+                  <input id="apt-password" class="transition duration-200 block w-full py-3 px-5 border-2 border-gray-300 focus:border-indigo-500 rounded text-sm pr-10" type="password" name="password">
+                  <a class="absolute right-0 mr-3 cursor-pointer" data-toggle="password" data-target="#apt-password" data-class-active="text-indigo-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- remember me -->
+              <label class="flex items-center">
+                <input type="checkbox" class="form-checkbox text-indigo-500">
+                <span class="ml-2 text-gray-600 text-sm">Remember me</span>
+              </label> <!-- /remember me -->
+
+              <!-- login -->
+              <button id="apt-button-login" class="transition duration-200 bg-indigo-500 hover:bg-indigo-700 py-4 px-6 mt-6 rounded shadow-md hover:shadow-none text-white block w-full" type="submit">
+                Log In
+              </button>
+
+              <div class="text-center mt-10">
+                <p class="text-sm">Don't have an account? <a href="#" class="text-indigo-500 hover:underline">Register now</a>.</p>
+              </div>
+            </div> <!-- /card body -->
+          </div> <!-- /card outer -->
+        </form> <!-- /just form -->
+      </div> <!-- /flex item -->
+      <div class="mx-8 text-white w-full">
+        <h2 class="text-3xl font-bold">Become a Member</h2>
+        <p class="text-lg leading-8 mt-2 text-indigo-200">We are the first online site to provide a variety of women's and men's clothing collections. We also ship to worldwide with free shipping.</p>
+
+        <div class="mt-10">
+          <div class="flex items-start mb-8">
+            <svg class="w-12 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <div class="ml-8">
+              <h4 class="uppercase font-semibold tracking-wider text-lg mb-1">Free Delivery</h4>
+              <p class="text-indigo-200 leading-7">Free shipping worldwide with a minimum purchase of $100 and for all new customers.</p>
+            </div>
+          </div>
+          <div class="flex items-start mb-8">
+            <svg class="w-12 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            <div class="ml-8">
+              <h4 class="uppercase font-semibold tracking-wider text-lg mb-1">Secure Payment	</h4>
+              <p class="text-indigo-200 leading-7">We process your payment safely, there is no fraud, all your data is known only to us, so don't worry about it.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <svg class="w-12 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div class="ml-8">
+              <h4 class="uppercase font-semibold tracking-wider text-lg mb-1">Money Back Guarantee</h4>
+              <p class="text-indigo-200 leading-7">We guarantee your money back if the item is inappropriate or defective.</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /flex item -->
+    </div> <!-- /flex container -->
+    <!-- copyright -->
+    <div class="text-center mt-20 text-xs text-indigo-300 uppercase font-semibold tracking-widest">
+      <p>Copyright &copy; Your App</p>
+
+      <div class="mt-4 inline-flex">
+        <a class="font-semibold hover:underline text-white mx-2" href="#">Privacy Policy</a>
+        <a class="font-semibold hover:underline text-white mx-2" href="#">Terms of Service</a>
+      </div>
+    </div> <!-- /copyright -->
+  </div> <!-- /container -->
+@endsection
+
+@section('beforeend')
+ 	<script src="https://cdn.jsdelivr.net/npm/vanilla-js-show-hide-password@1.0.0/toggle-password.js"></script>
+	<script src="js/login.js"></script> 
+@endsection
+

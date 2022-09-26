@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="initial-scale=1,width=device-width">
+	<meta charset="utf-8">
+
+  <title>Colorful Login</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-indigo-500">
+  <div class="container mx-auto my-12">
+    <!-- flex container -->
+    <div class="flex justify-center mx-6 sm:mx-0">
+      <!-- flex item -->
+      <div class="sm:w-4/6 lg:w-2/6 w-auto">
+        <!-- just form -->
+        <form id="apt-login-form" autocomplete="off">
+          <!-- Card outer -->
+          <div class="rounded-lg shadow-lg bg-white">
+            <!-- Card header -->
+            <div class="sm:px-10 sm:pt-10 px-6 pt-6 text-center">
+              <svg class="w-12 inline-block mb-2 text-indigo-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="49.9941" cy="49.9778" r="40" transform="rotate(-30 49.9941 49.9778)" stroke="currentColor" stroke-opacity="0.2" stroke-width="20"></circle>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M73.8337 93.929C50.099 106.818 20.2776 98.5074 6.6928 74.9778C-7.11432 51.0632 1.07944 20.4837 24.9941 6.67656C48.0364 -6.62694 77.2663 0.494732 91.7187 22.424L74.3465 32.4538C65.463 20.0775 48.466 16.219 34.9941 23.9971C20.6453 32.2813 15.729 50.6291 24.0133 64.9778C32.0748 78.9407 49.6656 83.9716 63.8279 76.5984L73.8337 93.929Z" fill="currentColor"></path>
+              </svg>
+              <h2 class="text-2xl font-bold">Sign In</h2>
+              <p class="mt-2 leading-6 text-sm">Before continuing, please log in to your account and start creating.</p>
+            </div>
+
+            <!-- Card body -->
+            <div class="sm:p-10 p-6">
+              <!-- form group -->
+              <div class="mb-6">
+                <div class="flex items-center">
+                  <svg class="w-5 text-gray-600 absolute ml-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <input id="apt-username" class="pl-12 transition duration-200 block w-full py-3 px-5 border border-gray-300 bg-gray-100 focus:bg-transparent focus:border-indigo-500 rounded text-sm" type="text" name="username" placeholder="Your Email">
+                </div>
+              </div>
+
+              <!-- form group -->
+              <div class="mb-6">
+                <div class="flex items-center relative">
+                  <svg class="w-5 text-gray-600 absolute ml-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <input id="apt-password" class="pl-12 transition duration-200 block w-full py-3 px-5 border border-gray-300 bg-gray-100 focus:bg-transparent focus:border-indigo-500 rounded text-sm pr-10" type="password" name="password" placeholder="Your Password">
+                  <a class="absolute right-0 mr-3 cursor-pointer" data-toggle="password" data-target="#apt-password" data-class-active="text-indigo-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- login -->
+              <button id="apt-button-login" class="transition duration-200 bg-indigo-500 hover:bg-indigo-600 py-3 px-8 rounded shadow-md hover:shadow-none text-white ml-auto uppercase text-sm font-semibold tracking-wider block w-full" type="submit">
+                Log In
+              </button>
+
+              <hr class="h-px border-gray-300 mt-8">
+
+              <div class="mt-6 text-sm -mx-2 flex justify-center">
+                <a href="#" class="text-indigo-500 font-semibold hover:underline mx-2">Forgot Password</a>
+                <a href="#" class="text-indigo-500 font-semibold hover:underline mx-2">Register</a>
+              </div>
+            </div> <!-- /card body -->
+          </div> <!-- /card outer -->
+          <!-- copyright -->
+          <div class="flex mt-6 text-xs">
+            <p class="text-indigo-300">&copy; Your App</p>
+
+            <div class="flex -mx-2 ml-auto">
+              <a class="mx-2 transition duration-200 text-white hover:underline" href="#">Privacy Policy</a>
+              <a class="mx-2 transition duration-200 text-white hover:underline" href="#">Terms of Service</a>
+            </div>
+          </div> <!-- /copyright -->
+        </form> <!-- /just form -->
+      </div> <!-- /flex item -->
+    </div> <!-- /flex container -->
+  </div> <!-- /container -->
+
+ 	<script src="https://cdn.jsdelivr.net/npm/vanilla-js-show-hide-password@1.0.0/toggle-password.js"></script>
+	<script src="js/login.js"></script> 
+</body>
+
+</html>

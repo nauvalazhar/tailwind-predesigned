@@ -1,0 +1,85 @@
+@layout('layouts::layout')
+
+@set('title', 'Simple Login')
+
+@section('content')
+  <div class="container mx-auto">
+    <!-- flex container -->
+    <div class="flex justify-center my-20 mx-6 sm:mx-0">
+      <!-- flex item -->
+      <div class="sm:w-4/6 lg:w-2/6 w-auto">
+        <!-- just form -->
+        <form id="apt-login-form" autocomplete="off">
+          <!-- Card outer -->
+          <div class="bg-white shadow-md rounded-lg border-t-4 border-blue-600">
+            <!-- Card header -->
+            <div class="sm:px-10 sm:pt-10 px-6 pt-6">
+              <h1 class="text-3xl font-semibold">Sign In</h1>
+              <h4 class="mt-2 leading-6 text-gray-600 font-light leading-7">
+                Before continuing, please log in to your account and start creating.
+              </h4>
+            </div>
+
+            <!-- Card body -->
+            <div class="sm:p-10 px-6 pb-6 md:pt-4">
+              <!-- form group -->
+              <div class="mb-6">
+                <label class="text-gray-600 inline-block mb-2 text-sm" for="apt-username">Username</label>
+                <input id="apt-username" class="transition duration-200 block w-full py-3 px-5 border-2 border-gray-300 focus:border-blue-600 rounded" type="text" name="username">
+              </div>
+              <!-- form group -->
+              <div class="mb-6">
+                <label class="text-gray-600 w-full inline-flex mb-2 text-sm" for="apt-password">
+                  Password
+                  <a href="#" class="ml-auto text-blue-600 hover:underline transition duration-200">Forgot Password?</a>
+                </label>
+                <div class="flex items-center relative">
+                  <input id="apt-password" class="transition duration-200 block w-full py-3 px-5 border-2 border-gray-300 focus:border-blue-600 rounded pr-10" type="password" name="password">
+                  <a class="absolute right-0 mr-3 cursor-pointer" data-toggle="password" data-target="#apt-password" data-class-active="text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-eye">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- action button wrapper -->
+              <div class="flex">
+                <!-- remember me -->
+                <label class="flex items-center">
+                  <input type="checkbox" class="form-checkbox text-blue-600">
+                  <span class="ml-2 text-gray-600">Remember me</span>
+                </label> <!-- /remember me -->
+
+                <!-- login -->
+                <button id="apt-button-login" class="transition duration-200 bg-blue-600 hover:bg-blue-700 py-2 px-6 rounded shadow-md hover:shadow-none text-white ml-auto" type="submit">
+                  Log In
+                </button>
+              </div>
+
+              <div class="text-center mt-10">
+                <p class="text-gray-600 font-light">
+                  Don't have an account? 
+                  <a href="#" class="text-blue-600 hover:underline">Register now</a>.
+                </p>
+              </div>
+            </div> <!-- /card body -->
+          </div> <!-- /card outer -->
+          <!-- copyright -->
+          <div class="text-center my-10 text-xs text-gray-600 uppercase font-semibold tracking-widest">
+            Copyright &copy; Your App
+          </div> <!-- /copyright -->
+        </form> <!-- /just form -->
+      </div> <!-- /flex item -->
+    </div> <!-- /flex container -->
+  </div> <!-- /container -->
+@endsection
+
+@section('beforeend')
+ 	<script src="https://cdn.jsdelivr.net/npm/vanilla-js-show-hide-password@1.0.0/toggle-password.js"></script>
+	<script src="js/login.js"></script> 
+@endsection

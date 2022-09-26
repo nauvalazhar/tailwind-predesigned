@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="initial-scale=1,width=device-width">
+	<meta charset="utf-8">
+
+  <title>{{ title || 'Untitled Page' }}</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  @!section('beforeendhead')
+</head>
+
+@if(rawBody)
+{{{ rawBody }}}
+@else
+<body class="bg-gray-100">
+@endif
+  @!section('content')
+
+  @!section('beforeend')
+</body>
+
+</html>
