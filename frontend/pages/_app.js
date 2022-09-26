@@ -6,7 +6,7 @@ import { modes, sizes } from '@consts';
 import { SWRConfig } from 'swr';
 
 function MyApp({ Component, pageProps }) {
-  const Layout = Component.getLayout || ((page) => page);
+  const Layout = Component.getLayout || (({ children }) => children);
 
   return (
     <>

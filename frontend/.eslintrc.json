@@ -9,8 +9,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "airbnb",
-    "plugin:prettier/recommended",
-    "next/core-web-vitals"
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -45,6 +44,7 @@
         "aspects": ["invalidHref", "preferButton"]
       }
     ],
+    "react/jsx-no-bind": "off",
     "import/prefer-default-export": "off"
   }
 }
