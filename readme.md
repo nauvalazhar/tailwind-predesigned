@@ -7,6 +7,9 @@ An old project in my free time's free time.
 - Easy-to-preview for the frontend code
 - Copy-paste ready for the consumer
 
+## Todo
+A lot
+
 ## Development
 
 To start developing, clone this repository first. You will see the following directory structure:
