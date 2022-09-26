@@ -20,7 +20,7 @@ function Sidebar() {
           />
           <SearchIcon className="w-4 absolute right-4 text-white/60" />
         </div>
-        <div className="overflow-auto h-3/4 mb-4 border-b border-white/10 -mx-4 px-4">
+        <div className="overflow-auto h-3/4 mb-4 border-b border-white/10 -mx-4 px-4 pb-4">
           <TreeViewer />
         </div>
         <div className="overflow-auto h-full">
