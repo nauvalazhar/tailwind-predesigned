@@ -31,7 +31,7 @@ function Sidebar() {
             <h2 className="text-4xl">🚀</h2>
             <h3 className="mt-4 text-xl font-semibold">Upgrade to Pro</h3>
             <p className="text-center mt-2">
-              Get more components by upgrade to pro account.
+              Just kidding, everything is free!
             </p>
           </div>
         </div>

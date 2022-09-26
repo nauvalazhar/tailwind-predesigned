@@ -1,7 +1,5 @@
-import globApi from 'glob';
 import path from 'path';
 import fs from 'fs';
-import fse from 'fs-extra';
 
 export function compose(...fns) {
   return (x) => fns.reduce((res, fn) => fn(res), x);
@@ -54,22 +52,6 @@ export function humanFileSize(bytes, si) {
     u += 1;
   } while (Math.abs(bytesSize) >= thresh && u < units.length - 1);
   return `${bytesSize.toFixed(1)} ${units[u]}`;
-}
-
-/**
- *
- * Promise wrapper for glob API
- */
-export function glob(pattern, options) {
-  return new Promise((resolve, reject) => {
-    globApi(pattern, options, (err, files) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(files);
-      }
-    });
-  });
 }
 
 export function determineLanguage(filename) {
