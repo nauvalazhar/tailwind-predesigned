@@ -1,0 +1,16 @@
+{
+  "name": "necis",
+  "description": "Freebie resource landing page design.",
+  "tailwind_predesigned": {
+    "techs": [
+      "html"
+    ],
+    "tech": "html",
+    "type": "page",
+    "category": "product"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
+
