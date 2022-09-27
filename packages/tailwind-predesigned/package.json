@@ -1,0 +1,10 @@
+{
+  "name": "tailwind-predesigned",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "degit": "^2.8.4",
+    "yargs": "^17.5.1"
+  }
+}

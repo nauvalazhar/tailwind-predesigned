@@ -7,7 +7,7 @@ function Download() {
   if (loadingDesign) return <div>Loading</div>;
 
   const design = data.data;
-  const command = `npx degit nauvalazhar/tailwind-predesigned/frontend/public/designs/html/${design.name} ${design.name}`;
+  const command = `npx tailwind-predesigned -d ${design.name}`;
 
   return (
     <section className="flex overflow-hidden">
@@ -43,10 +43,8 @@ function Download() {
           <p>
             You need to remember, this design is not ready for production,
             because we use Tailwind CDN which is not recommended for production.
-          </p>
-          <p>
             The reason we use this method is to speed up and save space without
-            having to generate CSS code for each design.
+            having to generate CSS code for each design block.
           </p>
         </div>
       </div>

@@ -9,13 +9,11 @@ const navbarToggler = document.querySelectorAll('.navbar-toggler');
 const navbarClose = document.querySelectorAll('.navbar-close');
 
 function openNavbar(navbar) {
-    navbar.style.right = 0;
+  navbar.classList.replace('-right-full', 'right-0');
 }
 
 function closeNavbar(navbar) {
-    const navbarWidth = navbar.clientWidth;
-
-    navbar.style.right = -navbarWidth + 'px';
+  navbar.classList.replace('right-0', '-right-full');
 }
 
 navbarToggler.forEach(toggler => toggler.addEventListener('click', openNavbar.bind(this, navbar)));
