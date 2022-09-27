@@ -1,5 +1,5 @@
-import { Button, DownloadIcon } from '@components';
-import { modes, sizes } from '@consts';
+import { DownloadBtn } from '@components';
+import { modes as allModes, sizes, MODE_PREVIEW } from '@consts';
 import {
   useEditorContext,
   CHANGE_SIZE,
@@ -9,6 +9,8 @@ import clsx from 'clsx';
 
 function Toolbar() {
   const [{ mode, size }, dispatch] = useEditorContext();
+
+  const modes = allModes.filter((m) => m.display !== false);
 
   return (
     <div className="flex bg-slate-900 text-white py-3 px-5 border-b border-slate-800 flex items-center">
@@ -20,14 +22,14 @@ function Toolbar() {
               type="button"
               className={clsx(
                 'flex items-center py-3 px-4 rounded uppercase text-sm tracking-wider font-semibold transition',
-                m.name === mode.name
+                m.name === mode
                   ? 'bg-slate-800'
                   : 'text-white/60 hover:text-white'
               )}
               onClick={() =>
                 dispatch({
                   type: CHANGE_MODE,
-                  payload: m,
+                  payload: m.name,
                 })
               }>
               {m.displayName}
@@ -45,7 +47,7 @@ function Toolbar() {
                 size.name === s.name
                   ? 'bg-slate-700'
                   : 'bg-slate-800 hover:bg-slate-700',
-                mode.name !== 'preview' && 'pointer-events-none opacity-60'
+                mode !== MODE_PREVIEW && 'pointer-events-none opacity-60'
               )}
               type="button"
               onClick={() => dispatch({ type: CHANGE_SIZE, payload: s })}>
@@ -55,10 +57,7 @@ function Toolbar() {
         </div>
       </div>
       <div className="w-4/12 text-right">
-        <Button variant="primary" className="shadow-slate-lg">
-          <DownloadIcon className="w-4 mr-3" />
-          Download
-        </Button>
+        <DownloadBtn />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import 'tailwindcss/tailwind.css';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { EditorProvider } from '@contexts/EditorContext';
-import { modes, sizes } from '@consts';
+import { sizes, MODE_PREVIEW } from '@consts';
 import { SWRConfig } from 'swr';
 
 function MyApp({ Component, pageProps }) {
@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
         initialValue={{
           resolution: '0x0',
           sidebar: true,
-          mode: modes[0],
+          mode: MODE_PREVIEW,
           size: sizes[0],
         }}>
         <SWRConfig
