@@ -19,7 +19,7 @@ function dirPaths(root) {
   const distDir = path.join(root, 'dist');
   const feDir = path.join(root, '../../frontend');
   const feDesignsDir = path.join(feDir, 'public/designs/html');
-  const feDataDir = path.join(feDir, 'data/');
+  const feDataDir = path.join(feDir, 'json/');
 
   return { designsDir, coreDir, outDir, distDir, feDir, feDesignsDir, feDataDir };
 }

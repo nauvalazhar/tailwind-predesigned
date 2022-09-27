@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin');
+const typography = require('@tailwindcss/typography');
 
 module.exports = {
   content: [
@@ -100,6 +101,7 @@ module.exports = {
     },
   },
   plugins: [
+    typography,
     plugin(function more({ addUtilities }) {
       const utilities = {
         '.gr-primary': {

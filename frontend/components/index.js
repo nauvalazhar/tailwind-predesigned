@@ -11,4 +11,6 @@ export { default as About } from './About';
 export { default as ResolutionToast } from './ResolutionToast';
 export { default as EditorLayout } from './EditorLayout';
 export { default as TreeViewer } from './TreeViewer';
+export { default as DownloadBtn } from './DownloadBtn';
+export { default as Download } from './Download';
 export * from './Icons';

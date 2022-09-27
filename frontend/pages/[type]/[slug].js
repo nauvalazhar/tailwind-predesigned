@@ -1,15 +1,13 @@
-import { Syntax, Preview, About, EditorLayout } from '@components';
+import { Syntax, Preview, About, EditorLayout, Download } from '@components';
 import { useEditorContext } from '@contexts/EditorContext';
+import { MODE_CODES, MODE_ABOUT, MODE_DOWNLOAD } from '@consts';
 
 function Editor() {
-  const [
-    {
-      mode: { name: modeName },
-    },
-  ] = useEditorContext();
+  const [{ mode }] = useEditorContext();
 
-  if (modeName === 'codes') return <Syntax />;
-  if (modeName === 'about') return <About />;
+  if (mode === MODE_CODES) return <Syntax />;
+  if (mode === MODE_ABOUT) return <About />;
+  if (mode === MODE_DOWNLOAD) return <Download />;
 
   return <Preview />;
 }

@@ -59,17 +59,27 @@ export const techs = [
   },
 ];
 
+export const MODE_PREVIEW = 'PREVIEW';
+export const MODE_CODES = 'CODES';
+export const MODE_ABOUT = 'ABOUT';
+export const MODE_DOWNLOAD = 'DOWNLOAD';
+
 export const modes = [
   {
-    name: 'preview',
+    name: MODE_PREVIEW,
     displayName: 'Preview',
   },
   {
-    name: 'codes',
+    name: MODE_CODES,
     displayName: 'Codes',
   },
   {
-    name: 'about',
+    name: MODE_ABOUT,
     displayName: 'About',
+  },
+  {
+    name: MODE_DOWNLOAD,
+    displayName: 'Download',
+    display: false,
   },
 ];

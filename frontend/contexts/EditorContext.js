@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useReducer, createContext, useContext } from 'react';
-import { modes } from '@consts';
+import { MODE_DOWNLOAD } from '@consts';
 
 const EditorContext = createContext({});
 
@@ -18,7 +18,7 @@ function reducer(state, action) {
     case CHANGE_RESOLUTION:
       return { ...state, resolution: action.payload };
     case CHANGE_DESIGN:
-      return { ...state, design: action.payload, mode: modes[0] };
+      return { ...state, design: action.payload, mode: MODE_DOWNLOAD };
     default:
       throw new Error();
   }
