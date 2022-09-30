@@ -1,0 +1,17 @@
+{
+  "name": "",
+  "description": "",
+  "tailwind_predesigned": {
+    "techs": [
+      "html"
+    ],
+    "tech": "html",
+    "type": "",
+    "category": ""
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
+
+

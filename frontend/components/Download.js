@@ -12,7 +12,7 @@ function Download() {
   return (
     <section className="flex overflow-hidden">
       <div className="w-7/12">
-        <div className="min-w-full overflow-auto h-full prose prose-invert prose-pre:bg-slate-800/75 border-r border-slate-800 p-8">
+        <div className="min-w-full overflow-auto h-full prose prose-invert prose-pre:bg-neutral-800/75 border-r border-neutral-800 p-8">
           <h2>How to Download</h2>
           <p className="lead">
             We don&apos;t have any opinion about how you use this design. You

@@ -13,7 +13,7 @@ function Toolbar() {
   const modes = allModes.filter((m) => m.display !== false);
 
   return (
-    <div className="flex bg-slate-900 text-white py-3 px-5 border-b border-slate-800 flex items-center">
+    <div className="flex bg-neutral-900 text-white py-3 px-5 border-b border-neutral-800 flex items-center">
       <div className="w-4/12">
         <div className="flex items-center space-x-3">
           {modes.map((m) => (
@@ -23,7 +23,7 @@ function Toolbar() {
               className={clsx(
                 'flex items-center py-3 px-4 rounded uppercase text-sm tracking-wider font-semibold transition',
                 m.name === mode
-                  ? 'bg-slate-800'
+                  ? 'bg-neutral-800'
                   : 'text-white/60 hover:text-white'
               )}
               onClick={() =>
@@ -45,8 +45,8 @@ function Toolbar() {
               className={clsx(
                 'w-10 h-10 text-sm flex-1 font-semibold first:rounded-tl first:rounded-bl last:rounded-tr last:rounded-br uppercase transition',
                 size.name === s.name
-                  ? 'bg-slate-700'
-                  : 'bg-slate-800 hover:bg-slate-700',
+                  ? 'bg-neutral-700'
+                  : 'bg-neutral-800 hover:bg-neutral-700',
                 mode !== MODE_PREVIEW && 'pointer-events-none opacity-60'
               )}
               type="button"
