@@ -2,7 +2,7 @@
 
 An old project in my free time's free time. If the design looks bad, blame my past.
 
-![preview](https://user-images.githubusercontent.com/14899175/192240171-1c7076df-c4c9-459f-8a0e-e5ab552c9314.png) |
+|<img width="1668" alt="image" src="https://user-images.githubusercontent.com/14899175/193224929-bd860443-ff83-419e-897a-6069937ae7ef.png"> |
 |---|
 
 ## Objectives
