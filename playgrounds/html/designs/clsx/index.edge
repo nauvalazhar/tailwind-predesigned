@@ -1,0 +1,117 @@
+@layout('layouts::layout')
+
+@set('title', 'The clsx hero')
+@set('body', '<body>')
+
+@section('content')
+  <div class="min-h-screen bg-zinc-900">
+    <nav class="py-10 w-full block lg:hidden">
+      <div class="container mx-auto sm:px-20 px-10 2xl:px-0 flex items-center">
+        <div class="w-3/12">
+          <a class="text-xl font-semibold text-blue-100" href="#">clsx</a>
+        </div>
+        <div class="ml-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-toggler w-8 text-blue-100 cursor-pointer"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </div>
+      </div>
+    </nav>
+    <nav id="main-navbar" class="py-10 lg:static fixed h-full lg:h-auto w-full bg-zinc-900 lg:bg-transparent z-50 transition-all top-0 -right-full lg:right-0">
+      <div class="container mx-auto h-full lg:h-auto sm:px-20 px-10 2xl:px-0 flex lg:items-center flex-wrap flex-col lg:flex-row lg:flex-no-wrap">
+        <div class="lg:w-3/12 flex lg:inline-block items-center">
+          <a class="text-xl font-semibold text-white" href="#">clsx</a>
+          <a class="navbar-close ml-auto lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 text-white cursor-pointer"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></a>
+        </div>
+
+        <div class="lg:w-6/12 mt-8 lg:mt-0">
+          <ul class="flex justify-center lg:flex-row flex-col">
+            <li><a class="lg:mx-6 py-2 lg:py-0 inline-block w-full lg:w-auto text-blue-100 border-b border-blue-100 transition-all font-semibold" href="/">Home</a></li>
+            <li><a class="lg:mx-6 py-2 lg:py-0 inline-block w-full lg:w-auto text-blue-100/75 hover:text-white transition-all font-semibold" href="https://github.com/lukeed/clsx">Documentation</a></li>
+            <li><a class="lg:mx-6 py-2 lg:py-0 inline-block w-full lg:w-auto text-blue-100/75 hover:text-white transition-all font-semibold" href="https://github.com/lukeed/clsx/issues">Issues</a></li>
+            <li><a class="lg:mx-6 py-2 lg:py-0 inline-block w-full lg:w-auto text-blue-100/75 hover:text-white transition-all font-semibold" href="https://www.npmjs.com/package/clsx">NPM</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:w-3/12 text-right lg:mt-0 mt-auto">
+          <a class="inline-flex transition-all lg:w-auto w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 px-6 rounded-lg shadow-md" href="https://github.com/lukeed/clsx" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 mr-3"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            Github
+            <span class="ml-4">3.8k</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container mx-auto sm:px-20 px-10 2xl:px-0 py-20">
+      <div class="flex flex-wrap">
+        <div class="lg:w-6/12 w-full">
+          <div class="text-blue-500 uppercase font-semibold tracking-wider mb-4">JavaScript Library</div>
+          <h1 class="text-white text-4xl lg:text-6xl leading-tight lg:leading-tight">A tiny (228B) utility for constructing <span class="font-semibold bg-blue-100/10">`className`</span> strings conditionally</h1>
+          <p class="text-2xl mt-6 text-blue-100/60 w-10/12 leading-9">Also serves as a faster &amp; smaller drop-in replacement for the classnames module.</p>
+          <p class="text-lg mt-6 text-blue-100/60 w-10/12">This module is available in three formats:</p>
+          <ul class="mt-4 text-blue-100 leading-loose space-y-4">
+            <li class="flex items-center">
+              <span class="w-6 h-6 mr-3 rounded-full bg-blue-500 text-white flex items-center justify-center">
+                <svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              ES Module: dist/clsx.m.js
+            </li>
+            <li class="flex items-center">
+              <span class="w-6 h-6 mr-3 rounded-full bg-blue-500 text-white flex items-center justify-center">
+                <svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              CommonJS: dist/clsx.js
+            </li>
+            <li class="flex items-center">
+              <span class="w-6 h-6 mr-3 rounded-full bg-blue-500 text-white flex items-center justify-center">
+                <svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              UMD: dist/clsx.min.js
+            </li>
+          </ul>
+          <h2 class="mt-16 uppercase text-blue-100/60 font-semibold tracking-wider text-sm mb-2">Created By</h2>
+          <div class="flex items-center mt-4">
+            <img src="https://avatars.githubusercontent.com/u/5855893?v=4" class="w-14 h-14 rounded-full">
+            <div class="ml-5">
+              <h3 class="font-semibold text-blue-100">Luke Edwards</h3>
+              <h4 class="text-blue-100/60 mt-px">@lukeed</h4>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-6/12 w-full mt-10 lg:mt-0">
+          <h2 class="uppercase text-blue-100/60 font-semibold tracking-wider text-sm mb-2">Install</h2>
+          <pre class="shadow-lg !bg-zinc-800/50 !rounded-xl !p-8 mb-6"><code class="language-bash">npm install clsx</code></pre>
+          <h2 class="uppercase text-blue-100/60 font-semibold tracking-wider text-sm mb-2">Usage</h2>
+          <pre class="shadow-lg !bg-zinc-800/50 !rounded-xl !p-8"><code class="language-javascript">import clsx from 'clsx';
+
+// Strings (variadic)
+clsx('foo', true && 'bar', 'baz');
+//=> 'foo bar baz'
+
+// Objects
+clsx({ foo:true, bar:false, baz:isTrue() });
+//=> 'foo baz'
+
+// Objects (variadic)
+clsx({ foo:true }, { bar:false }, null, { '--foobar':'hello' });
+//=> 'foo --foobar'
+
+// Arrays
+clsx(['foo', 0, false, 'bar']);
+//=> 'foo bar'
+
+// Arrays (variadic)
+clsx(['foo'], ['', 0, false, 'bar'], [['baz', [['hello'], 'there']]]);
+//=> 'foo bar baz hello there'</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection
+
+@section('beforeendhead')
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-night-owl.min.css" rel="stylesheet">
+@endsection
+
+@section('beforeend')
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+	<script src="js/index.js"></script>
+@endsection

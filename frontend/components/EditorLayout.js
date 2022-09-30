@@ -18,7 +18,7 @@ function EditorLayout({ children }) {
         <Navbar />
         <div className="h-full flex overflow-hidden">
           <Sidebar />
-          <div className="bg-slate-900 border-l border-slate-800 w-full overflow-hidden flex flex-col">
+          <div className="bg-neutral-900 border-l border-neutral-800 w-full overflow-hidden flex flex-col">
             <ResolutionToast />
             <Toolbar />
             {children}
