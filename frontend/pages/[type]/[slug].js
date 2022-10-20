@@ -41,7 +41,11 @@ function Editor() {
   return (
     <>
       <Head>
-        <title>{titlable(designName || '')} &mdash; tailwind-predesigned</title>
+        <title>
+          {designName
+            ? `${titlable(designName)} &mdash; tailwind-predesigned`
+            : 'tailwind-predesigned'}
+        </title>
       </Head>
       <Component />
     </>
