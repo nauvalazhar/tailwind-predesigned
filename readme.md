@@ -10,9 +10,6 @@ An old project in my free time's free time. If the design looks bad, blame my pa
 - Easy-to-preview for the frontend code
 - Copy-paste ready for the consumer
 
-## Todo
-A lot
-
 ## Development
 
 To start developing, clone this repository first. You will see the following directory structure:
