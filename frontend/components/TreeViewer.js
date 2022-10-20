@@ -19,7 +19,7 @@ function TreeViewer() {
 
   let selectedDesign = '';
 
-  if (!loadingDesign) {
+  if (!loadingDesign && design) {
     selectedDesign = design.data.filepath;
   }
 

@@ -1,1 +1,1 @@
-{"name":"bordered-login","description":"Bordered login page design.","path":"block/login/bordered-login","filepath":"block/login/bordered-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{"name":"bordered-login","description":"Bordered login page design.","path":"block/login/bordered-login","filepath":"block/login/bordered-login.json","techs":["html"],"tech":"html","type":"block","category":"login","files":{"html":"index.html","javascript":"js/index.js"}}

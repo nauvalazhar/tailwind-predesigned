@@ -12,21 +12,9 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <style>{`
-          .linenumber {
-            font-style: normal !important;
-            opacity: .6 !important;
-          }
-
-          .codeblock {
-            padding: 0 !important;
-            margin: 0 !important;
-            background: transparent !important;
-            overflow: initial !important;
-          }
-
-          .codeblock code {
-            background-color: transparent !important;
-            font-size: 14px !important;
+          // force hide overlay message such as the 'read-only' overlay
+          .overflowingContentWidgets .monaco-editor-overlaymessage {
+            display: none !important;
           }
         `}</style>
       </Head>

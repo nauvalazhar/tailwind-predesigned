@@ -1,7 +1,7 @@
 import { titlable } from '@helpers';
 import { useDesign } from '@hooks';
 
-function About() {
+function Docs() {
   const { data, isLoading: loadingDesign } = useDesign();
 
   if (loadingDesign) return <div>Loading</div>;
@@ -16,4 +16,4 @@ function About() {
   );
 }
 
-export default About;
+export default Docs;

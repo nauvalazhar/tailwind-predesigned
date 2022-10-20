@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["components/"],
+      "@utils/*": ["utils/*"],
       "@helpers": ["utils/helpers.js"],
       "@consts": ["utils/consts.js"],
       "@hooks": ["utils/hooks.js"],

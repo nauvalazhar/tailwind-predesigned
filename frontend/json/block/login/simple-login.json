@@ -1,1 +1,1 @@
-{"name":"simple-login","description":"Simple login page design.","path":"block/login/simple-login","filepath":"block/login/simple-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{"name":"simple-login","description":"Simple login page design.","path":"block/login/simple-login","filepath":"block/login/simple-login.json","techs":["html"],"tech":"html","type":"block","category":"login","files":{"html":"index.html","javascript":"js/index.js"}}

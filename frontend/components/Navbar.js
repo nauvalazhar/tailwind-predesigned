@@ -1,27 +1,25 @@
+import { GithubBtn } from '@components';
+import Link from 'next/link';
+
 function Navbar() {
   return (
     <nav className="p-6 bg-neutral-900 border-b border-neutral-800 flex items-center">
-      <h1 className="text-lg font-semibold font-mono text-white">
-        tailwind-predesigned
-      </h1>
-      <a
-        className="ml-auto inline-flex transition-all lg:w-auto w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-5 rounded-lg shadow-md"
-        href="https://github.com/nauvalazhar/tailwind-predesigned"
-        target="_blank"
-        rel="noreferrer">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-5 mr-3">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-        </svg>
-        Github
-      </a>
+      <div className="space-y-1">
+        <h1 className="text-lg font-semibold font-mono text-white">
+          <Link href="/">tailwind-predesigned</Link>
+        </h1>
+        <h2 className="text-white/50 text-sm">
+          design by{' '}
+          <a
+            className="text-blue-500 font-semibold"
+            href="https://twitter.com/mhdnauvalazhar"
+            target="_blank"
+            rel="noreferrer">
+            @mhdnauvalazhar
+          </a>
+        </h2>
+      </div>
+      <GithubBtn />
     </nav>
   );
 }

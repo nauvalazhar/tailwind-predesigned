@@ -1,15 +1,51 @@
-import { Syntax, Preview, About, EditorLayout, Download } from '@components';
+import {
+  Syntax,
+  Preview,
+  Docs,
+  EditorLayout,
+  Download,
+  EmptyState,
+} from '@components';
 import { useEditorContext } from '@contexts/EditorContext';
-import { MODE_CODES, MODE_ABOUT, MODE_DOWNLOAD } from '@consts';
+import { MODE_CODES, MODE_DOCS, MODE_DOWNLOAD } from '@consts';
+import { useDesign } from '@hooks';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import { titlable } from '@helpers';
 
 function Editor() {
+  const { data: design, isLoading: loadingDesign } = useDesign();
   const [{ mode }] = useEditorContext();
+  const {
+    query: { slug: designName },
+  } = useRouter();
 
-  if (mode === MODE_CODES) return <Syntax />;
-  if (mode === MODE_ABOUT) return <About />;
-  if (mode === MODE_DOWNLOAD) return <Download />;
+  if (!design && !loadingDesign) {
+    return (
+      <EmptyState
+        title="Sorry, the design you are looking for does not exist"
+        icon="🥺">
+        Our mistake was not having the design you were looking for, but maybe
+        <br />
+        we will create one in the future, or you can contribute.
+      </EmptyState>
+    );
+  }
 
-  return <Preview />;
+  let Component = Preview;
+
+  if (mode === MODE_CODES) Component = Syntax;
+  else if (mode === MODE_DOCS) Component = Docs;
+  else if (mode === MODE_DOWNLOAD) Component = Download;
+
+  return (
+    <>
+      <Head>
+        <title>{titlable(designName || '')} &mdash; tailwind-predesigned</title>
+      </Head>
+      <Component />
+    </>
+  );
 }
 
 Editor.getLayout = EditorLayout;

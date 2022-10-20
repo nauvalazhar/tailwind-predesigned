@@ -144,3 +144,14 @@ export function serializeFilePath(filePath) {
     .replace(/\.$/, '')
     .replace(/\.\./g, '');
 }
+
+export function getRandomInt(a, b) {
+  const min = Math.ceil(a);
+  const max = Math.floor(b);
+
+  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+}
+
+export function arrayByInt(n) {
+  return [...Array(n).keys()];
+}

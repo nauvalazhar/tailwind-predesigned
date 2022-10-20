@@ -1,1 +1,1 @@
-{"name":"boxed-login","description":"Boxed login page design.","path":"block/login/boxed-login","filepath":"block/login/boxed-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{"name":"boxed-login","description":"Boxed login page design.","path":"block/login/boxed-login","filepath":"block/login/boxed-login.json","techs":["html"],"tech":"html","type":"block","category":"login","files":{"html":"index.html","javascript":"js/index.js"}}
