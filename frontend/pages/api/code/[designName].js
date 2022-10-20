@@ -5,10 +5,12 @@ export default async function handler(req, res) {
   const {
     query: { designName, file = 'index.html' },
   } = req;
+
   const filepath = path.join(
     process.cwd(),
     `public/designs/html/${designName}/${file}`
   );
+
   if (!fs.existsSync(filepath) || !file) {
     return res.status(404).end();
   }

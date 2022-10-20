@@ -1,1 +1,1 @@
-{"name":"pantone-login","description":"Pantone login page design.","path":"block/login/pantone-login","filepath":"block/login/pantone-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{"name":"pantone-login","description":"Pantone login page design.","path":"block/login/pantone-login","filepath":"block/login/pantone-login.json","techs":["html"],"tech":"html","type":"block","category":"login","files":{"html":"index.html","javascript":"js/index.js"}}
