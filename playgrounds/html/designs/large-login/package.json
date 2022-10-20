@@ -1,7 +1,10 @@
 {
   "name": "large-login",
-  "description": "Large login page design.",
+  "description": "a design by tailwind-predesigned",
+  "author": "Nauval (https://github.com/nauvalazhar)",
   "tailwind_predesigned": {
+    "name": "Large Login",
+    "description": "Login page with large background image on the right.",
     "techs": [
       "html"
     ],
@@ -13,3 +16,5 @@
     "tailwindcss": "^3.1.8"
   }
 }
+
+

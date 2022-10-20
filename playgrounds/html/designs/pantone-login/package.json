@@ -1,7 +1,10 @@
 {
   "name": "pantone-login",
-  "description": "Pantone login page design.",
+  "description": "a design by tailwind-predesigned",
+  "author": "Nauval (https://github.com/nauvalazhar)",
   "tailwind_predesigned": {
+    "name": "Pantone Login",
+    "description": "Login page with pantone color.",
     "techs": [
       "html"
     ],
@@ -13,3 +16,5 @@
     "tailwindcss": "^3.1.8"
   }
 }
+
+
