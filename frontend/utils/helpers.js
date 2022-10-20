@@ -70,15 +70,18 @@ export function mapFiles(options) {
     const isDir = fileStat.isDirectory();
     const fileParse = path.parse(file);
     const filePathSafe = filePath.replace(`${root}/`, '');
-    const itemName = isDir ? `${filePathSafe}/` : filePathSafe;
-    const displayName = titlable(fileParse.base);
     const { name } = fileParse;
+    const designJson = isDir ? {} : JSON.parse(fs.readFileSync(filePath));
+    const itemName = isDir ? `${filePathSafe}/` : filePathSafe;
+    const displayName = isDir ? titlable(fileParse.base) : designJson.name;
+
     const fileWithData = {
       displayName,
       name,
       path: filePathSafe,
       dir: isDir,
     };
+
     const dirWithData = {
       ...fileWithData,
       dir: true,
@@ -154,4 +157,16 @@ export function getRandomInt(a, b) {
 
 export function arrayByInt(n) {
   return [...Array(n).keys()];
+}
+
+export function extractAuthor(str) {
+  const [, name, url] = /(.*)\((.*)\)/g.exec(str);
+
+  return [name, url];
+}
+
+export function npmjsCom(name, version) {
+  const ver = version.replace(/^[^0-9]/g, '');
+
+  return `https://npmjs.com/package/${name}/v/${ver}`;
 }

@@ -8,8 +8,8 @@ function LoadingCodes() {
           {arrayByInt(getRandomInt(1, 10)).map((n) => (
             <div
               key={n}
-              className="h-6 bg-neutral-800 rounded-xl"
-              style={{ width: getRandomInt(10, 100) }}
+              className="h-4 bg-neutral-800 rounded-xl"
+              style={{ width: getRandomInt(30, 100) }}
             />
           ))}
         </div>

@@ -6,14 +6,20 @@ import {
   CHANGE_MODE,
 } from '@contexts/EditorContext';
 import clsx from 'clsx';
+import { useDesign } from '@hooks';
 
 function Toolbar() {
+  const { data: design } = useDesign();
   const [{ mode, size }, dispatch] = useEditorContext();
 
   const modes = allModes.filter((m) => m.display !== false);
 
   return (
-    <div className="flex bg-neutral-900 text-white py-3 px-5 border-b border-neutral-800 flex items-center">
+    <div
+      className={clsx(
+        'bg-neutral-900 text-white py-3 px-5 border-b border-neutral-800 flex items-center transition-all',
+        !design && 'pointer-events-none opacity-60'
+      )}>
       <div className="w-4/12">
         <div className="flex items-center space-x-3">
           {modes.map((m) => (

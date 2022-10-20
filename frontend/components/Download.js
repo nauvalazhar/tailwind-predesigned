@@ -31,7 +31,6 @@ function Download() {
             <li>Open your favorite terminal emulator</li>
             <li>
               Copy the following command
-              <br />
               <pre>
                 <code>{command}</code>
               </pre>
