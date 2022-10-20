@@ -15,6 +15,7 @@ function Syntax() {
   return (
     <div className="overflow-auto h-full">
       <Editor
+        loading={<LoadingCodes />}
         height="100%"
         language="html"
         theme="my-theme"

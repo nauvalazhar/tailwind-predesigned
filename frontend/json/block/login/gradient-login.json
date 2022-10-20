@@ -1,1 +1,1 @@
-{"name":"gradient-login","description":"Gradient login page design.","path":"block/login/gradient-login","filepath":"block/login/gradient-login.json","techs":["html"],"tech":"html","type":"block","category":"login","files":{"html":"index.html","javascript":"js/index.js"}}
+{"name":"Gradient Login","description":"Login page with gradient style.","path":"block/login/gradient-login","filepath":"block/login/gradient-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}

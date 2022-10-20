@@ -1,1 +1,1 @@
-{"name":"large-login","description":"Large login page design.","path":"block/login/large-login","filepath":"block/login/large-login.json","techs":["html"],"tech":"html","type":"block","category":"login","files":{"html":"index.html","javascript":"js/index.js"}}
+{"name":"Large Login","description":"Login page with large background image on the right.","path":"block/login/large-login","filepath":"block/login/large-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}

@@ -1,1 +1,1 @@
-{"name":"skew-login","description":"Skew login page design.","path":"block/login/skew-login","filepath":"block/login/skew-login.json","techs":["html"],"tech":"html","type":"block","category":"login","files":{"html":"index.html","javascript":"js/index.js"}}
+{"name":"Skew Login","description":"Login page with skew style.","path":"block/login/skew-login","filepath":"block/login/skew-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}

@@ -4,6 +4,9 @@ module.exports = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['github.com'],
+  },
   swcMinify: true,
   serverRuntimeConfig: {
     PROJECT_ROOT: __dirname,

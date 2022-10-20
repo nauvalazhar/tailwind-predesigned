@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useEditorContext, CHANGE_RESOLUTION } from '@contexts/EditorContext';
 import { useDesign } from '@hooks';
+import { EmptyState } from '@components';
 
 function Preview() {
   const { data: design, isLoading: loadingDesign } = useDesign();
@@ -20,7 +21,12 @@ function Preview() {
     }
   }, [size, dispatch]);
 
-  if (loadingDesign) return <div>Loading ...</div>;
+  if (loadingDesign)
+    return (
+      <EmptyState title="Loading Preview" icon="⏳">
+        Loading
+      </EmptyState>
+    );
 
   return (
     <div className="w-full h-full relative flex justify-center">
