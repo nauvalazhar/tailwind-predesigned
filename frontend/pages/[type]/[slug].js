@@ -43,7 +43,7 @@ function Editor() {
       <Head>
         <title>
           {designName
-            ? `${titlable(designName)} &mdash; tailwind-predesigned`
+            ? `${titlable(designName)} – tailwind-predesigned`
             : 'tailwind-predesigned'}
         </title>
       </Head>
