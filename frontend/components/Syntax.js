@@ -1,32 +1,32 @@
-import { useState } from 'react';
 import { LoadingCodes } from '@components';
 import { useSourceCode } from '@hooks';
 import Editor from '@monaco-editor/react';
 import { editorStyle } from '@utils/editor-style';
+import { useState } from 'react';
 import clsx from 'clsx';
 
 function Syntax() {
   const { data, isLoading: loadingSourceCode } = useSourceCode();
-  const [isEditorMounted, setIsEditorMounted] = useState(false);
+  const [isEditorLoaded, setIsEditorLoaded] = useState(false);
 
   function handleEditorWillMount(monaco) {
     monaco.editor.defineTheme('my-theme', editorStyle);
   }
 
   function handleEditorMounted() {
-    setIsEditorMounted(true);
+    setIsEditorLoaded(true);
   }
 
   const code = data ? data.code : '';
 
   return (
     <div className="overflow-auto h-full relative">
-      {loadingSourceCode && <LoadingCodes />}
+      {loadingSourceCode || (!isEditorLoaded && <LoadingCodes />)}
 
       <Editor
         className={clsx(
           'transition-all',
-          isEditorMounted ? 'opacity-100' : 'opacity-0'
+          isEditorLoaded ? 'opacity-100' : 'opacity-0'
         )}
         loading=""
         height="100%"
