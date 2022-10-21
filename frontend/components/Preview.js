@@ -46,7 +46,7 @@ function Preview() {
             </div>
           }
           className="absolute z-10 z-10 bg-neutral-900">
-          Maybe it will take some time, let&apost;s have a drink first.
+          Maybe it will take some time, let&apos;s have a drink first.
         </EmptyState>
       )}
 
