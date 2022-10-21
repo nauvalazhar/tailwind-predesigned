@@ -30,7 +30,9 @@ function Preview() {
   }, [size, dispatch]);
 
   function iframeLoad() {
-    setIsIframeLoaded(true);
+    setTimeout(() => {
+      setIsIframeLoaded(true);
+    }, 100);
   }
 
   const previewUrl = design ? design.data.preview : '';
