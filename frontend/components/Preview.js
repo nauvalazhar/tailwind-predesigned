@@ -37,7 +37,7 @@ function Preview() {
   const isLoadingIframe = !isIframeLoaded || loadingDesign;
 
   return (
-    <div className="w-full h-full relative flex justify-center">
+    <div className="w-full h-full relative flex justify-center bg-neutral-900">
       {isLoadingIframe && (
         <EmptyState
           title="Loading Preview"
@@ -46,7 +46,7 @@ function Preview() {
               <LoaderIcon className="w-24 text-white animate-spin" />
             </div>
           }
-          className="absolute z-10 bg-neutral-900 z-10">
+          className="absolute z-10 z-10">
           {quote.current}
         </EmptyState>
       )}
@@ -55,7 +55,7 @@ function Preview() {
         ref={previewFrame}
         className={clsx(
           'w-full h-full transition-all',
-          isLoadingIframe ? 'bg-transparent' : 'bg-white'
+          isLoadingIframe ? 'bg-transparent opacity-0' : 'bg-white opacity-100'
         )}
         title="Demo"
         src={previewUrl}
