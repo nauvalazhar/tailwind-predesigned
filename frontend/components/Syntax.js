@@ -18,14 +18,16 @@ function Syntax() {
   }
 
   const code = data ? data.code : '';
-  const isLoadingEditor = !isEditorMounted || loadingSourceCode;
 
   return (
     <div className="overflow-auto h-full">
-      {isLoadingEditor && <LoadingCodes />}
+      {loadingSourceCode && <LoadingCodes />}
 
       <Editor
-        className={clsx(isLoadingEditor && 'opacity-0')}
+        className={clsx(
+          'transition-all',
+          isEditorMounted ? 'opacity-100' : 'opacity-0'
+        )}
         loading=""
         height="100%"
         language="html"

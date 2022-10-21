@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { MODE_DOWNLOAD } from '@consts';
 import { useEditorContext, CHANGE_MODE } from '@contexts/EditorContext';
 import { ExternalIcon } from '@components';
+import clsx from 'clsx';
 
 function Docs() {
   const { data, isLoading: loadingDesign } = useDesign();
@@ -17,14 +18,16 @@ function Docs() {
     });
   }
 
-  if (loadingDesign) return <div>Loading</div>;
-
-  const design = data.data;
+  const design = data ? data.data : {};
 
   const [authorName, authorUrl] = extractAuthor(design.packageJson.author);
 
   return (
-    <section className="p-8 text-white prose prose-invert min-w-full">
+    <section
+      className={clsx(
+        'p-8 text-white prose prose-invert min-w-full transition-all',
+        loadingDesign ? 'opacity-0' : 'opacity-100'
+      )}>
       <h2>{design.name}</h2>
       <p className="lead">{design.description}</p>
       <hr className="border-neutral-800 my-4" />
@@ -67,6 +70,7 @@ function Docs() {
           for more
         </li>
       </ul>
+
       {['dependencies', 'devDependencies'].map((dep) => {
         if (dep in design.packageJson) {
           return (
