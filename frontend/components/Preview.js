@@ -1,12 +1,20 @@
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useEditorContext, CHANGE_RESOLUTION } from '@contexts/EditorContext';
 import { useDesign } from '@hooks';
-import { EmptyState } from '@components';
+import { EmptyState, LoaderIcon } from '@components';
+import { getQuote } from '@helpers';
+import clsx from 'clsx';
 
 function Preview() {
   const { data: design, isLoading: loadingDesign } = useDesign();
   const [{ size }, dispatch] = useEditorContext();
   const previewFrame = useRef(null);
+  const quote = useRef([]);
+  const [isIframeLoaded, setIsIframeLoaded] = useState(false);
+
+  useEffect(() => {
+    quote.current = getQuote();
+  }, [getQuote]);
 
   useEffect(() => {
     const breakpoint =
@@ -21,20 +29,36 @@ function Preview() {
     }
   }, [size, dispatch]);
 
-  if (loadingDesign)
-    return (
-      <EmptyState title="Loading Preview" icon="⏳">
-        Loading
-      </EmptyState>
-    );
+  function iframeLoad() {
+    setIsIframeLoaded(true);
+  }
+
+  const previewUrl = design ? design.data.preview : '';
+  const isLoadingIframe = !isIframeLoaded || loadingDesign;
 
   return (
     <div className="w-full h-full relative flex justify-center">
+      {isLoadingIframe && (
+        <EmptyState
+          title="Loading Preview"
+          icon={
+            <div>
+              <LoaderIcon className="w-24 text-white animate-spin" />
+            </div>
+          }
+          className="absolute z-10 bg-neutral-900 z-10">
+          {quote.current}
+        </EmptyState>
+      )}
       <iframe
+        onLoad={iframeLoad}
         ref={previewFrame}
-        className="w-full h-full bg-white transition-all"
+        className={clsx(
+          'w-full h-full transition-all',
+          isLoadingIframe ? 'bg-transparent' : 'bg-white'
+        )}
         title="Demo"
-        src={design.data.preview}
+        src={previewUrl}
       />
     </div>
   );

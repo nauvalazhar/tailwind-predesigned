@@ -170,3 +170,21 @@ export function npmjsCom(name, version) {
 
   return `https://npmjs.com/package/${name}/v/${ver}`;
 }
+
+export function getQuote() {
+  const quotes = [
+    'There are only two hard things in Computer Science: cache invalidation and naming things. - Phil Karlton',
+    'Make illegal states unrepresentable. - Yaron Minsky',
+    'First make the change easy (warning: this might be hard), then make the easy change. - Kent Beck',
+    'Simple things should be simple, complex things should be possible. - Alan Kay',
+    'Before software can be reusable it first has to be usable. - Ralph Johnson',
+    'Simplicity is prerequisite for reliability. - Edsger W. Dijkstra',
+    'Premature optimization is the root of all evil. - Donald Knuth',
+    'Any problem in computer science can be solved with another level of indirection. - David Wheeler',
+    'The best performance improvement is the transition from the nonworking state to the working state. - J. Osterhout',
+    'I can’t be as confident about computer science as I can about biology. Biology easily has 500 years of exciting problems to work on. It’s at that level. - Donald Knuth',
+    'A computer lets you make more mistakes faster than any other invention with the possible exceptions of handguns and Tequila. - Mitch Ratcliffe',
+  ];
+
+  return quotes[getRandomInt(0, quotes.length - 1)];
+}
