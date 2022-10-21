@@ -20,7 +20,7 @@ function Syntax() {
   const code = data ? data.code : '';
 
   return (
-    <div className="overflow-auto h-full">
+    <div className="overflow-auto h-full relative">
       {loadingSourceCode && <LoadingCodes />}
 
       <Editor

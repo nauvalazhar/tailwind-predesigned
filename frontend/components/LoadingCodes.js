@@ -2,9 +2,9 @@ import { getRandomInt, arrayByInt } from '@helpers';
 
 function LoadingCodes() {
   return (
-    <div className="p-6 space-y-4 animate-pulse">
+    <div className="p-6 space-y-4 absolute z-10 inset-0 bg-neutral-900">
       {arrayByInt(getRandomInt(10, 15)).map((i) => (
-        <div key={i} className="flex items-center space-x-3">
+        <div key={i} className="flex items-center space-x-3 animate-pulse">
           {arrayByInt(getRandomInt(1, 10)).map((n) => (
             <div
               key={n}
