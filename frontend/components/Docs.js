@@ -62,7 +62,7 @@ function Docs() {
             type="button"
             className="cursor-pointer p-0 m-0 underline"
             onClick={gotoDownload}>
-            download page
+            download tab
           </button>{' '}
           for more
         </li>
