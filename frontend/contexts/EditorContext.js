@@ -8,6 +8,7 @@ export const CHANGE_MODE = 'CHANGE_MODE';
 export const CHANGE_SIZE = 'CHANGE_SIZE';
 export const CHANGE_RESOLUTION = 'CHANGE_RESOLUTION';
 export const CHANGE_DESIGN = 'CHANGE_DESIGN';
+export const CHANGE_TREE_MODE = 'CHANGE_TREE_MODE';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -19,6 +20,8 @@ function reducer(state, action) {
       return { ...state, resolution: action.payload };
     case CHANGE_DESIGN:
       return { ...state, design: action.payload, mode: MODE_DOWNLOAD };
+    case CHANGE_TREE_MODE:
+      return { ...state, treeMode: action.payload };
     default:
       throw new Error();
   }

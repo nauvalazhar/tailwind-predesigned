@@ -13,6 +13,7 @@
     "@babel/core": "^7.13.10",
     "@babel/plugin-proposal-export-default-from": "^7.12.13",
     "@monaco-editor/react": "^4.4.6",
+    "@radix-ui/react-collapsible": "^1.0.1",
     "@radix-ui/react-dialog": "^1.0.0",
     "@radix-ui/react-dropdown-menu": "^1.0.0",
     "@radix-ui/react-popover": "^1.0.0",

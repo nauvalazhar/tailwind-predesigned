@@ -1,9 +1,10 @@
-import { TreeViewer, SearchIcon } from '@components';
+import { TreeViewer, FilesViewer } from '@components';
 import clsx from 'clsx';
-import { useEditorContext } from '@contexts/EditorContext';
+import { useEditorContext, CHANGE_TREE_MODE } from '@contexts/EditorContext';
+import { treeModes, TREE_MODE_DESIGNS, TREE_MODE_FILES } from '@consts';
 
 function Sidebar() {
-  const [{ sidebar }] = useEditorContext();
+  const [{ sidebar, treeMode }, dispatch] = useEditorContext();
 
   return (
     <div
@@ -13,15 +14,29 @@ function Sidebar() {
       )}>
       <div className="p-4 text-white flex flex-col h-full">
         <div className="relative flex items-center mb-6">
-          <input
-            type="text"
-            className="w-full bg-neutral-800 pl-4 pr-10 py-2 rounded border border-transparent focus:border-primary-500 focus:bg-transparent focus-visible:outline-none transition"
-            placeholder="Search design"
-          />
-          <SearchIcon className="w-4 absolute right-4 text-white/60" />
+          {treeModes.map((tab) => (
+            <button
+              type="button"
+              key={tab.name}
+              className={clsx(
+                'flex-1 cursor-pointer border-y border-r border-white/20 py-2 first:border-l first:rounded-tl first:rounded-bl last:rounded-tr last:rounded-br uppercase text-sm tracking-wider font-semibold transition-all',
+                treeMode === tab.name
+                  ? 'text-white bg-white/5'
+                  : 'text-white/60'
+              )}
+              onClick={() =>
+                dispatch({
+                  type: CHANGE_TREE_MODE,
+                  payload: tab.name,
+                })
+              }>
+              {tab.displayName}
+            </button>
+          ))}
         </div>
         <div className="overflow-auto h-3/4 mb-4 border-b border-white/10 -mx-4 px-4 pb-4">
-          <TreeViewer />
+          {treeMode === TREE_MODE_DESIGNS && <TreeViewer />}
+          {treeMode === TREE_MODE_FILES && <FilesViewer />}
         </div>
         <div className="overflow-auto h-full">
           <h2 className="uppercase font-semibold text-sm tracking-wider text-white/40 mb-2">

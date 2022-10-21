@@ -55,9 +55,14 @@ export function humanFileSize(bytes, si) {
 }
 
 export function determineLanguage(filename) {
-  const extension = filename.match(/.*\.(.*)$/);
+  const mapping = {
+    js: 'javascript',
+  };
 
-  return extension[1];
+  const extract = filename.match(/.*\.(.*)$/);
+  const extension = extract[1];
+
+  return extension in mapping ? mapping[extension] : extension;
 }
 
 export function mapFiles(options) {
@@ -126,6 +131,34 @@ export function orderFiles(files) {
 
       return acc;
     }, {});
+}
+
+export function recursive({ files, root, base, publicpath }) {
+  const tree = {};
+
+  files.forEach((file) => {
+    const filepath = `${root}/${file}`;
+    const fileStat = fs.statSync(filepath);
+    const isDir = fileStat.isDirectory();
+
+    tree[file] = {
+      displayName: file,
+      path: filepath.split(base)[1].replace(/^\//g, ''),
+      public: path.join(publicpath, file),
+      dir: isDir,
+      language: !isDir ? determineLanguage(file) : null,
+      nodes: isDir
+        ? recursive({
+            files: fs.readdirSync(filepath),
+            root: filepath,
+            base,
+            publicpath,
+          })
+        : [],
+    };
+  });
+
+  return orderFiles(tree);
 }
 
 /**

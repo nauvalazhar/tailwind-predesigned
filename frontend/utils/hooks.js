@@ -25,13 +25,15 @@ export function useDesigns() {
   };
 }
 
-export function useGetDesign(name, base) {
+export function useGetDesign(name, base, params = {}) {
   const {
     query: { slug },
   } = useRouter();
   const designName = name || slug;
+  const qs = new URLSearchParams(params).toString();
+  const qsparams = qs ? `?${qs}` : '';
   const { data, error } = useSWR(
-    designName ? () => `${base}/${designName}` : null
+    designName ? () => `${base}/${designName}${qsparams}` : null
   );
 
   return {
@@ -46,5 +48,11 @@ export function useDesign(name) {
 }
 
 export function useSourceCode(name) {
-  return useGetDesign(name, `/api/code`);
+  const {
+    query: { f: file },
+  } = useRouter();
+
+  return useGetDesign(name, `/api/code`, {
+    file,
+  });
 }

@@ -20,7 +20,7 @@ function Syntax() {
   const code = data ? data.code : '';
 
   return (
-    <div className="overflow-auto h-full relative">
+    <div className="h-full relative">
       {(loadingSourceCode || !isEditorLoaded) && <LoadingCodes />}
 
       <Editor
@@ -30,7 +30,7 @@ function Syntax() {
         )}
         loading=""
         height="100%"
-        language="html"
+        language={data && data.language}
         theme="my-theme"
         value={code}
         options={{

@@ -83,3 +83,17 @@ export const modes = [
     display: false,
   },
 ];
+
+export const TREE_MODE_DESIGNS = 'DESIGNS';
+export const TREE_MODE_FILES = 'FILES';
+
+export const treeModes = [
+  {
+    name: TREE_MODE_DESIGNS,
+    displayName: 'Designs',
+  },
+  {
+    name: TREE_MODE_FILES,
+    displayName: 'Files',
+  },
+];

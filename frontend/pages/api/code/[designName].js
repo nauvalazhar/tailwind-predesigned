@@ -1,5 +1,6 @@
-const fs = require('fs');
-const path = require('path');
+import { determineLanguage } from '@helpers';
+import fs from 'fs';
+import path from 'path';
 
 export default async function handler(req, res) {
   const {
@@ -16,6 +17,7 @@ export default async function handler(req, res) {
   }
 
   const code = await fs.promises.readFile(filepath, 'utf8');
+  const language = determineLanguage(file);
 
-  return res.status(200).json({ code });
+  return res.status(200).json({ code, language });
 }
