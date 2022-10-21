@@ -21,7 +21,7 @@ function Syntax() {
 
   return (
     <div className="overflow-auto h-full relative">
-      {loadingSourceCode || (!isEditorLoaded && <LoadingCodes />)}
+      {(loadingSourceCode || !isEditorLoaded) && <LoadingCodes />}
 
       <Editor
         className={clsx(

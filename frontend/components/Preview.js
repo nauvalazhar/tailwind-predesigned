@@ -2,14 +2,12 @@ import { useState, useRef, useEffect } from 'react';
 import { useEditorContext, CHANGE_RESOLUTION } from '@contexts/EditorContext';
 import { useDesign } from '@hooks';
 import { EmptyState, LoaderIcon } from '@components';
-import { getQuote } from '@helpers';
 import clsx from 'clsx';
 
 function Preview() {
   const { data: design, isLoading: loadingDesign } = useDesign();
   const [{ size }, dispatch] = useEditorContext();
   const previewFrame = useRef(null);
-  const quote = useRef(getQuote());
   const [isFrameLoaded, setIsFrameLoaded] = useState(false);
 
   useEffect(() => {
@@ -39,19 +37,18 @@ function Preview() {
 
   return (
     <div className="w-full h-full relative flex justify-center bg-neutral-900">
-      {loadingDesign ||
-        (!isFrameLoaded && (
-          <EmptyState
-            title="Loading Preview"
-            icon={
-              <div>
-                <LoaderIcon className="w-16 text-white animate-spin" />
-              </div>
-            }
-            className="absolute z-10 z-10 bg-neutral-900">
-            {quote.current}
-          </EmptyState>
-        ))}
+      {(loadingDesign || !isFrameLoaded) && (
+        <EmptyState
+          title="Loading Preview"
+          icon={
+            <div>
+              <LoaderIcon className="w-16 text-white animate-spin" />
+            </div>
+          }
+          className="absolute z-10 z-10 bg-neutral-900">
+          Maybe it will take some time, let&apost;s have a drink first.
+        </EmptyState>
+      )}
 
       <iframe
         ref={previewFrame}
