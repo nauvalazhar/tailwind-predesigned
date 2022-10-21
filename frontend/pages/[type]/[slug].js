@@ -9,16 +9,11 @@ import {
 import { useEditorContext } from '@contexts/EditorContext';
 import { MODE_CODES, MODE_DOCS, MODE_DOWNLOAD } from '@consts';
 import { useDesign } from '@hooks';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { titlable } from '@helpers';
 
 function Editor() {
   const { data: design, isLoading: loadingDesign } = useDesign();
   const [{ mode }] = useEditorContext();
-  const {
-    query: { slug: designName },
-  } = useRouter();
 
   if (!design && !loadingDesign) {
     return (
@@ -42,8 +37,8 @@ function Editor() {
     <>
       <Head>
         <title>
-          {designName
-            ? `${titlable(designName)} – tailwind-predesigned`
+          {design
+            ? `${design.data.name} – tailwind-predesigned`
             : 'tailwind-predesigned'}
         </title>
       </Head>
