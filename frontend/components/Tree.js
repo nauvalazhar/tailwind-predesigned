@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 function Tree({ files, className, ...props }) {
-  const { folderIcon, fileIcon, onClick, selected } = props;
+  const { folderIcon, fileIcon, onClick, selected, fileAppend } = props;
 
   function handleClick(item) {
     onClick(item);
@@ -39,17 +39,19 @@ function Tree({ files, className, ...props }) {
         }
 
         return (
-          <button
-            key={key}
-            type="button"
-            className={clsx(
-              'flex items-center space-x-2 mb-3',
-              isSelected ? 'text-white font-semibold' : 'text-white/80'
-            )}
-            onClick={() => handleClick(val)}>
-            {fileIcon || <FileIcon className="w-5 opacity-60" />}
-            <span>{val.displayName}</span>
-          </button>
+          <div key={key} className="flex items-center mb-3 group">
+            <button
+              type="button"
+              className={clsx(
+                'flex items-center space-x-2',
+                isSelected ? 'text-white font-semibold' : 'text-white/80'
+              )}
+              onClick={() => handleClick(val)}>
+              {fileIcon || <FileIcon className="w-5 opacity-60" />}
+              <span>{val.displayName}</span>
+            </button>
+            {fileAppend(val, isSelected)}
+          </div>
         );
       })}
     </div>
@@ -62,6 +64,7 @@ Tree.defaultProps = {
   selected: undefined,
   folderIcon: undefined,
   fileIcon: undefined,
+  fileAppend: () => {},
 };
 
 Tree.propTypes = {
@@ -71,6 +74,7 @@ Tree.propTypes = {
   folderIcon: PropTypes.node,
   fileIcon: PropTypes.node,
   selected: PropTypes.string,
+  fileAppend: PropTypes.func,
 };
 
 export default Tree;

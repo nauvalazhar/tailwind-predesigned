@@ -1,9 +1,10 @@
-import { Tree } from '@components';
+import { Tree, DownloadIcon } from '@components';
 import { useDesign } from '@hooks';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { useEditorContext, CHANGE_MODE } from '@contexts/EditorContext';
-import { MODE_CODES } from '@consts';
+import { useEditorContext, SWITCH_MODE_EXPLORE } from '@contexts/EditorContext';
+import { MODE_SOURCE } from '@consts';
+import clsx from 'clsx';
 
 function FilesViewer() {
   const router = useRouter();
@@ -11,8 +12,8 @@ function FilesViewer() {
     query: { slug, f: file },
   } = router;
   const { data: design, isLoading: loadingDesign } = useDesign();
-  const [selected, setSelected] = useState('index.html');
   const [{ mode }, dispatch] = useEditorContext();
+  const [selected, setSelected] = useState(file || '');
 
   // this will preserve privious design selected path
   // and change the selected design path on every design change
@@ -23,10 +24,9 @@ function FilesViewer() {
   }, [file]);
 
   async function changeFile(item) {
-    if (mode !== MODE_CODES) {
+    if (mode !== MODE_SOURCE) {
       dispatch({
-        type: CHANGE_MODE,
-        payload: MODE_CODES,
+        type: SWITCH_MODE_EXPLORE,
       });
     }
 
@@ -41,8 +41,7 @@ function FilesViewer() {
   }
 
   if (loadingDesign) return <div>Loading</div>;
-
-  if (!selected) return [];
+  if (!design && !loadingDesign) return <div>Select design first</div>;
 
   return (
     <Tree
@@ -50,6 +49,17 @@ function FilesViewer() {
       className="space-y-2"
       files={design.data.tree}
       onClick={changeFile}
+      fileAppend={(item, active) => (
+        <a
+          download={item.displayName}
+          href={item.publicPath}
+          className={clsx(
+            'ml-auto transition-all',
+            active ? '' : 'opacity-0 group-hover:opacity-60'
+          )}>
+          <DownloadIcon className="w-4" />
+        </a>
+      )}
     />
   );
 }

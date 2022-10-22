@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { isCodes, fileExt } from '@helpers';
 import useSWR from 'swr';
 
 export function useUpdateQuery() {
@@ -25,20 +26,21 @@ export function useDesigns() {
   };
 }
 
-export function useGetDesign(name, base, params = {}) {
+export function useGetDesign(name, base, params = {}, kill = false) {
   const {
     query: { slug },
   } = useRouter();
   const designName = name || slug;
   const qs = new URLSearchParams(params).toString();
   const qsparams = qs ? `?${qs}` : '';
+
   const { data, error } = useSWR(
-    designName ? () => `${base}/${designName}${qsparams}` : null
+    designName && !kill ? () => `${base}/${designName}${qsparams}` : null
   );
 
   return {
     data,
-    isLoading: !error && !data,
+    isLoading: designName && !kill && !error && !data,
     isError: error,
   };
 }
@@ -47,12 +49,8 @@ export function useDesign(name) {
   return useGetDesign(name, `/api/design`);
 }
 
-export function useSourceCode(name) {
-  const {
-    query: { f: file },
-  } = useRouter();
+export function useSourceCode(file) {
+  const isFileCode = isCodes(fileExt(file));
 
-  return useGetDesign(name, `/api/code`, {
-    file,
-  });
+  return useGetDesign(null, `/api/code`, { file }, !isFileCode);
 }

@@ -60,7 +60,7 @@ export const techs = [
 ];
 
 export const MODE_PREVIEW = 'PREVIEW';
-export const MODE_CODES = 'CODES';
+export const MODE_SOURCE = 'SOURCE';
 export const MODE_DOCS = 'DOCS';
 export const MODE_DOWNLOAD = 'DOWNLOAD';
 
@@ -70,8 +70,8 @@ export const modes = [
     displayName: 'Preview',
   },
   {
-    name: MODE_CODES,
-    displayName: 'Codes',
+    name: MODE_SOURCE,
+    displayName: 'Source',
   },
   {
     name: MODE_DOCS,

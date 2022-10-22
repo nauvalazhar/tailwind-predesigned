@@ -1,1 +1,12 @@
-{"name":"Black Login","description":"Login page with black color.","path":"block/login/black-login","filepath":"block/login/black-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{
+    "name": "Black Login",
+    "description": "Login page with black color.",
+    "path": "block/login/black-login",
+    "filepath": "block/login/black-login.json",
+    "techs": [
+        "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "login"
+}

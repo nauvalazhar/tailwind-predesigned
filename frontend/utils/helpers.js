@@ -54,13 +54,21 @@ export function humanFileSize(bytes, si) {
   return `${bytesSize.toFixed(1)} ${units[u]}`;
 }
 
+export function fileExt(filename) {
+  if (!filename) return '';
+
+  const extract = filename.match(/.*\.(.*)$/);
+  const extension = extract[1];
+
+  return extension;
+}
+
 export function determineLanguage(filename) {
   const mapping = {
     js: 'javascript',
   };
 
-  const extract = filename.match(/.*\.(.*)$/);
-  const extension = extract[1];
+  const extension = fileExt(filename);
 
   return extension in mapping ? mapping[extension] : extension;
 }
@@ -133,18 +141,19 @@ export function orderFiles(files) {
     }, {});
 }
 
-export function recursive({ files, root, base, publicpath }) {
+export function recursive({ files, root, base, publicPath }) {
   const tree = {};
 
   files.forEach((file) => {
     const filepath = `${root}/${file}`;
     const fileStat = fs.statSync(filepath);
     const isDir = fileStat.isDirectory();
+    const designpathfile = filepath.split(base)[1].replace(/^\//g, '');
 
     tree[file] = {
       displayName: file,
-      path: filepath.split(base)[1].replace(/^\//g, ''),
-      public: path.join(publicpath, file),
+      path: designpathfile,
+      publicPath: path.join(publicPath, designpathfile),
       dir: isDir,
       language: !isDir ? determineLanguage(file) : null,
       nodes: isDir
@@ -152,7 +161,7 @@ export function recursive({ files, root, base, publicpath }) {
             files: fs.readdirSync(filepath),
             root: filepath,
             base,
-            publicpath,
+            publicPath,
           })
         : [],
     };
@@ -220,4 +229,51 @@ export function getQuote() {
   ];
 
   return quotes[getRandomInt(0, quotes.length - 1)];
+}
+
+export function isImages(str) {
+  // list of supported images
+  const images = [
+    'ico',
+    'png',
+    'gif',
+    'webp',
+    'avif',
+    'apng',
+    'jpg',
+    'jpeg',
+    'svg',
+  ];
+
+  return images.includes(str);
+}
+
+export function isVideos(str) {
+  // list of supported videos
+  const videos = ['mp4', 'webm', 'ogg'];
+
+  return videos.includes(str);
+}
+
+export function isCodes(str) {
+  // list of supported codes
+  const codes = ['html', 'js', 'javascript', 'css', 'json', 'txt'];
+
+  return codes.includes(str);
+}
+
+export function pathJoin(...p) {
+  return p.join('/');
+}
+
+export function designPath(...str) {
+  const createPath = pathJoin('/designs/html', ...str);
+
+  return createPath;
+}
+
+export function publicDesignPath(...str) {
+  const createPath = pathJoin('public', designPath(...str));
+
+  return createPath;
 }

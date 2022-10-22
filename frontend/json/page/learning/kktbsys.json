@@ -1,1 +1,12 @@
-{"name":"KKTBSYS","description":"Kenapa-kamu-tanya-begitu-siapa-yang-suruh landing page design.","path":"page/learning/kktbsys","filepath":"page/learning/kktbsys.json","techs":["html"],"tech":"html","type":"page","category":"learning"}
+{
+    "name": "KKTBSYS",
+    "description": "Kenapa-kamu-tanya-begitu-siapa-yang-suruh landing page design.",
+    "path": "page/learning/kktbsys",
+    "filepath": "page/learning/kktbsys.json",
+    "techs": [
+        "html"
+    ],
+    "tech": "html",
+    "type": "page",
+    "category": "learning"
+}

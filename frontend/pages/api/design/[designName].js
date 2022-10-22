@@ -1,14 +1,13 @@
-const path = require('path');
-const fs = require('fs');
-const fse = require('fs-extra');
-const { recursive } = require('@helpers');
+import { recursive, publicDesignPath, designPath } from '@helpers';
+import fs from 'fs';
+import path from 'path';
+import fse from 'fs-extra';
 
 export default async function handler(req, res) {
   const {
     query: { designName },
   } = req;
-  const designDir = `/designs/html/${designName}`;
-  const pathtofile = path.join(process.cwd(), 'public', designDir);
+  const pathtofile = path.join(process.cwd(), publicDesignPath(designName));
   const filepath = path.join(pathtofile, 'design.json');
 
   if (!fs.existsSync(filepath)) {
@@ -20,13 +19,13 @@ export default async function handler(req, res) {
     files: designTree,
     root: pathtofile,
     base: pathtofile,
-    publicpath: path.join('public', designDir),
+    publicPath: designPath(designName),
   });
 
   const json = await fse.readJson(filepath);
   const packageJson = await fse.readJson(path.join(pathtofile, 'package.json'));
   const data = { ...json, packageJson, tree };
 
-  const preview = `${designDir}/index.html`;
+  const preview = designPath(designName, 'index.html');
   return res.status(200).json({ data: { ...data, preview } });
 }

@@ -1,5 +1,5 @@
 import {
-  Syntax,
+  Source,
   Preview,
   Docs,
   EditorLayout,
@@ -7,7 +7,7 @@ import {
   EmptyState,
 } from '@components';
 import { useEditorContext } from '@contexts/EditorContext';
-import { MODE_CODES, MODE_DOCS, MODE_DOWNLOAD } from '@consts';
+import { MODE_SOURCE, MODE_DOCS, MODE_DOWNLOAD } from '@consts';
 import { useDesign } from '@hooks';
 import Head from 'next/head';
 
@@ -29,7 +29,7 @@ function Editor() {
 
   let Component = Preview;
 
-  if (mode === MODE_CODES) Component = Syntax;
+  if (mode === MODE_SOURCE) Component = Source;
   else if (mode === MODE_DOCS) Component = Docs;
   else if (mode === MODE_DOWNLOAD) Component = Download;
 
