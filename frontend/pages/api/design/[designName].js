@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     files: designTree,
     root: rootDesignPath,
     base: rootDesignPath,
-    publicPath: designPath,
+    staticPath: designPath,
   });
 
   const json = await fse.readJson(filepath);

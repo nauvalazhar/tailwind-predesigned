@@ -52,7 +52,7 @@ function FilesViewer() {
       fileAppend={(item, active) => (
         <a
           download={item.displayName}
-          href={item.publicPath}
+          href={item.staticPath}
           className={clsx(
             'ml-auto transition-all',
             active ? '' : 'opacity-0 group-hover:opacity-60'

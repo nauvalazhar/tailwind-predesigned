@@ -141,7 +141,7 @@ export function orderFiles(files) {
     }, {});
 }
 
-export function recursive({ files, root, base, publicPath }) {
+export function recursive({ files, root, base, staticPath }) {
   const tree = {};
 
   files.forEach((file) => {
@@ -153,7 +153,7 @@ export function recursive({ files, root, base, publicPath }) {
     tree[file] = {
       displayName: file,
       path: designpathfile,
-      publicPath: path.join(publicPath, designpathfile),
+      staticPath: path.join(staticPath, designpathfile),
       dir: isDir,
       language: !isDir ? determineLanguage(file) : null,
       nodes: isDir
@@ -161,7 +161,7 @@ export function recursive({ files, root, base, publicPath }) {
             files: fs.readdirSync(filepath),
             root: filepath,
             base,
-            publicPath,
+            staticPath,
           })
         : [],
     };
