@@ -31,7 +31,6 @@ function Home() {
       <EmptyState title="Welcome, Dev! 👋" prepend={logo}>
         Collection of free pre-designed Tailwind UI components. You can use it
         for
-        <br />
         <span className="border-b border-current">personal</span> or{' '}
         <span className="border-b border-current">commercial</span> purposes
         without any attribution.

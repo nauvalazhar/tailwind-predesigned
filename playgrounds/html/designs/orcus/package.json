@@ -1,10 +1,10 @@
 {
-  "name": "",
+  "name": "orcus",
   "description": "a design by tailwind-predesigned",
   "author": "Nauval (https://github.com/nauvalazhar)",
   "tailwind_predesigned": {
-    "name": "",
-    "description": "",
+    "name": "Orcus",
+    "description": "Hero component with sign up form.",
     "techs": [
       "html"
     ],
