@@ -31,6 +31,6 @@ export default async function handler(req, res) {
   );
   const data = { ...json, packageJson, tree };
 
-  const preview = path.join('/', designPath);
+  const preview = path.join('/', designPath, 'index.html');
   return res.status(200).json({ data: { ...data, preview } });
 }
