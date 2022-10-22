@@ -45,12 +45,32 @@ function Download() {
             <li>Wait until the cloning process is complete</li>
             <li>Done! 🥳</li>
           </ol>
-          <h3>Post-download</h3>
+          <h3>Caveats</h3>
           <p>
-            You need to remember, this design is not ready for production,
-            because we use Tailwind CDN which is not recommended for production.
-            The reason we use this method is to speed up and save space without
-            having to generate CSS code for each design block.
+            Worth noting, this design uses the{' '}
+            <a
+              href="https://tailwindcss.com/docs/installation/play-cdn"
+              target="_blank"
+              rel="noreferrer">
+              Tailwind CDN
+            </a>{' '}
+            which is <b>not recommended for production use</b>. The reason for
+            using this method is to speed up and save space without having to
+            generate CSS files for each block design.
+          </p>
+
+          <p>
+            However, each block design doesn&apos;t use Tailwind&apos;s custom
+            configuration so that the code in it can be easily copied and pasted
+            flexibly without having to write any Tailwind configuration.
+          </p>
+
+          <p>
+            So, if you want to use this design as the basis for your project,
+            then you&apos;ll need to do a Tailwind setup to generate Tailwind
+            locally, the setup depends on the library or framework you&apos;re
+            using. It is recommended to check the Tailwind installation page for
+            a more complete guide.
           </p>
         </div>
       </div>
@@ -72,8 +92,15 @@ function Download() {
           </h2>
           <div className="mt-4">
             <figure className="p-5 bg-neutral-800/50 rounded-lg">
-              <video controls>
+              <video controls className="w-full min-h-[329px]">
                 <source src="/installation.mp4" type="video/mp4" />
+                <track
+                  label="English"
+                  kind="captions"
+                  srcLang="en"
+                  src="/installation.vtt"
+                  default
+                />
                 <a href="/installation.mp4">Download the video here.</a>
               </video>
               <figcaption className="text-white/60 text-center mt-3 text-sm">
