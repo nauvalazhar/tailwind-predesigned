@@ -1,4 +1,3 @@
-import { titlable } from '@helpers';
 import { useDesign } from '@hooks';
 
 function Download() {
@@ -7,7 +6,9 @@ function Download() {
   if (loadingDesign) return <div>Loading</div>;
 
   const design = data.data;
-  const command = `npx tailwind-predesigned -d ${design.name}`;
+  const command = design
+    ? `npx tailwind-predesigned -d ${design.packageJson.name}`
+    : 'Loading command';
 
   return (
     <section className="flex overflow-hidden">
