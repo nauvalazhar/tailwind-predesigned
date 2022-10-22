@@ -262,8 +262,9 @@ export function isCodes(str) {
   return codes.includes(str);
 }
 
+// for client
 export function pathJoin(...p) {
-  return p.join('/');
+  return p.join('/').replace(/\/{2,}/g, '/');
 }
 
 export function designPath(...str) {
