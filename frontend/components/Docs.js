@@ -57,7 +57,7 @@ function Docs() {
       <ul>
         <li>
           Copy the code directly from the specified element in the
-          &quot;codes&quot; tab
+          &quot;source&quot; tab
         </li>
         <li>
           Download the entire design project. Go to{' '}
