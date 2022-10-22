@@ -6,7 +6,6 @@ export default async function handler(req, res) {
   const {
     query: { designName, file = 'index.html' },
   } = req;
-
   const filepath = path.join(process.cwd(), publicDesignPath(designName, file));
 
   if (!fs.existsSync(filepath) || !file) {
