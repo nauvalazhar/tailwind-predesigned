@@ -1,0 +1,12 @@
+{
+    "name": "Orcus",
+    "description": "Hero component with sign up form.",
+    "path": "block/hero/orcus",
+    "filepath": "block/hero/orcus.json",
+    "techs": [
+        "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "hero"
+}
