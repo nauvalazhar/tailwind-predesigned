@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00.100 --> 00:02.000
+Check Node JS and its version
+
+00:03.000 --> 00:07.000
+Run the `tailwind-predesigned` program using `npx`
+
+00:09.000 --> 00:13.100
+Read the contents of the folder to make sure the design is downloaded properly
