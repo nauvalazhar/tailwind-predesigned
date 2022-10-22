@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useReducer, createContext, useContext } from 'react';
-import { MODE_DOWNLOAD } from '@consts';
+import { MODE_DOWNLOAD, TREE_MODE_FILES, MODE_SOURCE } from '@consts';
 
 const EditorContext = createContext({});
 
@@ -8,6 +8,8 @@ export const CHANGE_MODE = 'CHANGE_MODE';
 export const CHANGE_SIZE = 'CHANGE_SIZE';
 export const CHANGE_RESOLUTION = 'CHANGE_RESOLUTION';
 export const CHANGE_DESIGN = 'CHANGE_DESIGN';
+export const CHANGE_TREE_MODE = 'CHANGE_TREE_MODE';
+export const SWITCH_MODE_EXPLORE = 'SWITCH_MODE_EXPLORE';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -19,6 +21,10 @@ function reducer(state, action) {
       return { ...state, resolution: action.payload };
     case CHANGE_DESIGN:
       return { ...state, design: action.payload, mode: MODE_DOWNLOAD };
+    case CHANGE_TREE_MODE:
+      return { ...state, treeMode: action.payload };
+    case SWITCH_MODE_EXPLORE:
+      return { ...state, treeMode: TREE_MODE_FILES, mode: MODE_SOURCE };
     default:
       throw new Error();
   }

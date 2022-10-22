@@ -1,1 +1,12 @@
-{"name":"Gradient Login","description":"Login page with gradient style.","path":"block/login/gradient-login","filepath":"block/login/gradient-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{
+    "name": "Gradient Login",
+    "description": "Login page with gradient style.",
+    "path": "block/login/gradient-login",
+    "filepath": "block/login/gradient-login.json",
+    "techs": [
+        "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "login"
+}

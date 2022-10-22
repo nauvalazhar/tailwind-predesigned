@@ -1,1 +1,12 @@
-{"name":"Sided Login","description":"Login page with 2 columns style.","path":"block/login/sided-login","filepath":"block/login/sided-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{
+    "name": "Sided Login",
+    "description": "Login page with 2 columns style.",
+    "path": "block/login/sided-login",
+    "filepath": "block/login/sided-login.json",
+    "techs": [
+        "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "login"
+}

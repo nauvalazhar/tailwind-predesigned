@@ -1,1 +1,12 @@
-{"name":"Colorful Login","description":"Login page with colorful style.","path":"block/login/colorful-login","filepath":"block/login/colorful-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{
+    "name": "Colorful Login",
+    "description": "Login page with colorful style.",
+    "path": "block/login/colorful-login",
+    "filepath": "block/login/colorful-login.json",
+    "techs": [
+        "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "login"
+}

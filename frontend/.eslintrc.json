@@ -44,6 +44,7 @@
         "aspects": ["invalidHref", "preferButton"]
       }
     ],
+    "jsx-a11y/media-has-caption": "off",
     "react/jsx-no-bind": "off",
     "import/prefer-default-export": "off"
   }

@@ -1,6 +1,6 @@
-import { TreeViewer, SearchIcon } from '@components';
-import clsx from 'clsx';
+import { Explorer } from '@components';
 import { useEditorContext } from '@contexts/EditorContext';
+import clsx from 'clsx';
 
 function Sidebar() {
   const [{ sidebar }] = useEditorContext();
@@ -12,17 +12,7 @@ function Sidebar() {
         !sidebar && '-ml-72'
       )}>
       <div className="p-4 text-white flex flex-col h-full">
-        <div className="relative flex items-center mb-6">
-          <input
-            type="text"
-            className="w-full bg-neutral-800 pl-4 pr-10 py-2 rounded border border-transparent focus:border-primary-500 focus:bg-transparent focus-visible:outline-none transition"
-            placeholder="Search design"
-          />
-          <SearchIcon className="w-4 absolute right-4 text-white/60" />
-        </div>
-        <div className="overflow-auto h-3/4 mb-4 border-b border-white/10 -mx-4 px-4 pb-4">
-          <TreeViewer />
-        </div>
+        <Explorer />
         <div className="overflow-auto h-full">
           <h2 className="uppercase font-semibold text-sm tracking-wider text-white/40 mb-2">
             Sponsored

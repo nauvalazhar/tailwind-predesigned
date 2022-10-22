@@ -2,7 +2,7 @@ import 'tailwindcss/tailwind.css';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { EditorProvider } from '@contexts/EditorContext';
-import { sizes, MODE_PREVIEW } from '@consts';
+import { sizes, MODE_PREVIEW, TREE_MODE_DESIGNS } from '@consts';
 import { SWRConfig } from 'swr';
 
 function MyApp({ Component, pageProps }) {
@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }) {
           sidebar: true,
           mode: MODE_PREVIEW,
           size: sizes[0],
+          treeMode: TREE_MODE_DESIGNS,
         }}>
         <SWRConfig
           value={{

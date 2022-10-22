@@ -1,15 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+import { publicDesignPath } from '@helpers';
+import fs from 'fs';
+import path from 'path';
 
 export default async function handler(req, res) {
   const {
     query: { designName, file = 'index.html' },
   } = req;
 
-  const filepath = path.join(
-    process.cwd(),
-    `public/designs/html/${designName}/${file}`
-  );
+  const filepath = path.join(process.cwd(), publicDesignPath(designName, file));
 
   if (!fs.existsSync(filepath) || !file) {
     return res.status(404).end();

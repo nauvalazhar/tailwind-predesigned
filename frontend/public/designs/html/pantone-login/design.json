@@ -1,1 +1,12 @@
-{"name":"Pantone Login","description":"Login page with pantone color.","path":"block/login/pantone-login","filepath":"block/login/pantone-login.json","techs":["html"],"tech":"html","type":"block","category":"login"}
+{
+    "name": "Pantone Login",
+    "description": "Login page with pantone color.",
+    "path": "block/login/pantone-login",
+    "filepath": "block/login/pantone-login.json",
+    "techs": [
+        "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "login"
+}
