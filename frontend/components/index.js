@@ -18,5 +18,6 @@ export { default as LoadingCodes } from './LoadingCodes';
 export { default as EmptyState } from './EmptyState';
 export { default as GithubBtn } from './GithubBtn';
 export { default as Collapsible } from './Collapsible';
+export { default as Popover } from './Popover';
 export { default as Explorer } from './Explorer';
 export * from './Icons';

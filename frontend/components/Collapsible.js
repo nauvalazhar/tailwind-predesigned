@@ -1,5 +1,5 @@
 import { Root, Trigger, Content } from '@radix-ui/react-collapsible';
-import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 function Collapsible({ defaultOpen, trigger, children }) {
   return (
@@ -9,5 +9,15 @@ function Collapsible({ defaultOpen, trigger, children }) {
     </Root>
   );
 }
+
+Collapsible.defaultProps = {
+  defaultOpen: false,
+};
+
+Collapsible.propTypes = {
+  defaultOpen: PropTypes.bool,
+  trigger: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default Collapsible;

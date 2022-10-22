@@ -1,4 +1,5 @@
 import { useDesign } from '@hooks';
+import { HelpIcon, Popover } from '@components';
 
 function Download() {
   const { data, isLoading: loadingDesign } = useDesign();
@@ -24,7 +25,12 @@ function Download() {
           <ul>
             <li>Basic knowledge of Tailwind</li>
             <li>Familiar with command-line interface</li>
-            <li>Node JS version 8 or above</li>
+            <li>
+              <a href="https://nodejs.org" target="_blank" rel="noreferrer">
+                Node JS
+              </a>{' '}
+              version 8 or above
+            </li>
           </ul>
           <h3>Download</h3>
           <p>In order to download this design, follow these steps:</p>
@@ -48,11 +54,33 @@ function Download() {
           </p>
         </div>
       </div>
-      <div className="w-5/12">
+      <div className="w-5/12 overflow-auto">
         <div className="p-8 text-white">
-          <h2 className="uppercase font-semibold text-sm tracking-wider text-white/40 mb-2">
-            Pane Right
+          <h2 className="uppercase font-semibold text-sm tracking-wider text-white/40 flex items-center">
+            Video Instruction{' '}
+            <Popover trigger={<HelpIcon className="w-5 ml-2" />}>
+              <div className="prose prose-invert">
+                <p className="mb-2">Things used in the video:</p>
+                <ul className="mt-0">
+                  <li>macOS 12.1</li>
+                  <li>Alacritty</li>
+                  <li>Node JS v16.17.1</li>
+                  <li>NPM 8.15.0</li>
+                </ul>
+              </div>
+            </Popover>
           </h2>
+          <div className="mt-4">
+            <figure className="p-5 bg-neutral-800/50 rounded-lg">
+              <video controls>
+                <source src="/installation.mp4" type="video/mp4" />
+                <a href="/installation.mp4">Download the video here.</a>
+              </video>
+              <figcaption className="text-white/60 text-center mt-3 text-sm">
+                Design download instruction video.
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
