@@ -1,5 +1,5 @@
 import { useDesign } from '@hooks';
-import { HelpIcon, Popover } from '@components';
+import { HelpIcon, Popover, CopyBtn } from '@components';
 
 function Download() {
   const { data, isLoading } = useDesign();
@@ -38,8 +38,9 @@ function Download() {
             <li>Open your favorite terminal emulator</li>
             <li>
               Copy the following command
-              <pre>
+              <pre className="p-2 pl-4 pr-2 flex items-center">
                 <code>{command}</code>
+                <CopyBtn text={command} className="ml-auto" />
               </pre>
             </li>
             <li>Wait until the cloning process is complete</li>
@@ -47,30 +48,31 @@ function Download() {
           </ol>
           <h3>Caveats</h3>
           <p>
-            Worth noting, this design uses the{' '}
+            Worth noting, each block design doesn&apos;t use Tailwind&apos;s
+            custom configuration so that the code in it can be easily copied and
+            pasted flexibly without having to write any Tailwind configuration.
+          </p>
+
+          <p>
+            However, this design uses the{' '}
             <a
               href="https://tailwindcss.com/docs/installation/play-cdn"
               target="_blank"
               rel="noreferrer">
               Tailwind CDN
             </a>{' '}
-            which is <b>not recommended for production use</b>. The reason for
-            using this method is to speed up and save space without having to
-            generate CSS files for each block design.
-          </p>
-
-          <p>
-            However, each block design doesn&apos;t use Tailwind&apos;s custom
-            configuration so that the code in it can be easily copied and pasted
-            flexibly without having to write any Tailwind configuration.
-          </p>
-
-          <p>
-            So, if you want to use this design as the basis for your project,
-            then you&apos;ll need to do a Tailwind setup to generate Tailwind
-            locally, the setup depends on the library or framework you&apos;re
-            using. It is recommended to check the Tailwind installation page for
-            a more complete guide.
+            which is <b>not recommended for production use</b>. So, if you want
+            to use this design as the basis for your project, then you&apos;ll
+            need to do a Tailwind setup to generate Tailwind locally, the setup
+            depends on the library or framework you&apos;re using. It is
+            recommended to check the{' '}
+            <a
+              href="https://tailwindcss.com/docs/installation"
+              target="_blank"
+              rel="noreferrer">
+              Tailwind installation page
+            </a>{' '}
+            for a more complete guide.
           </p>
         </div>
       </div>

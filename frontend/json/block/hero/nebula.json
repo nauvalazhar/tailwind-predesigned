@@ -1,0 +1,12 @@
+{
+    "name": "Nebula",
+    "description": "Hero for cloud hosting provider.",
+    "path": "block/hero/nebula",
+    "filepath": "block/hero/nebula.json",
+    "techs": [
+        "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "hero"
+}
