@@ -24,7 +24,9 @@ function Tree({ files, className, ...props }) {
                     'flex space-x-2 items-center',
                     isSelected ? 'text-white font-semibold' : 'text-white/80'
                   )}>
-                  {folderIcon || <FolderIcon className="w-5 opacity-60" />}
+                  {folderIcon || (
+                    <FolderIcon className="w-5 opacity-60 flex-shrink-0" />
+                  )}
                   <span>{val.displayName}</span>
                 </span>
               }
@@ -43,12 +45,14 @@ function Tree({ files, className, ...props }) {
             <button
               type="button"
               className={clsx(
-                'flex items-center space-x-2',
+                'flex items-center space-x-2 overflow-hidden pr-4',
                 isSelected ? 'text-white font-semibold' : 'text-white/80'
               )}
               onClick={() => handleClick(val)}>
-              {fileIcon || <FileIcon className="w-5 opacity-60" />}
-              <span>{val.displayName}</span>
+              {fileIcon || (
+                <FileIcon className="w-5 opacity-60 flex-shrink-0" />
+              )}
+              <span className="truncate">{val.displayName}</span>
             </button>
             {fileAppend(val, isSelected)}
           </div>

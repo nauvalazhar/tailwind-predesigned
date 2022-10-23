@@ -13,5 +13,3 @@ function closeNavbar(navbar) {
 navbarToggler.forEach(toggler => toggler.addEventListener('click', openNavbar.bind(this, navbar)));
 navbarClose.forEach(close => close.addEventListener('click', closeNavbar.bind(this, navbar)));
 
-
-

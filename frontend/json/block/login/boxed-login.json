@@ -1,12 +1,12 @@
 {
-    "name": "Boxed Login",
-    "description": "Login page with boxed style.",
-    "path": "block/login/boxed-login",
-    "filepath": "block/login/boxed-login.json",
-    "techs": [
-        "html"
-    ],
-    "tech": "html",
-    "type": "block",
-    "category": "login"
+  "name": "Boxed Login",
+  "description": "Login page with boxed style.",
+  "path": "block/login/boxed-login",
+  "filepath": "block/login/boxed-login.json",
+  "techs": [
+    "html"
+  ],
+  "tech": "html",
+  "type": "block",
+  "category": "login"
 }

@@ -1,8 +1,8 @@
 {
-    "name": "orcus",
-    "description": "a design by tailwind-predesigned",
-    "author": "Nauval (https://github.com/nauvalazhar)",
-    "devDependencies": {
-        "tailwindcss": "^3.1.8"
-    }
+  "name": "orcus",
+  "description": "a design by tailwind-predesigned",
+  "author": "Nauval (https://github.com/nauvalazhar)",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
 }

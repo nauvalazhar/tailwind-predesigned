@@ -141,10 +141,11 @@ export function orderFiles(files) {
     }, {});
 }
 
-export function recursive({ files, root, base, staticPath }) {
+export function recursive({ files, root, base, staticPath, exclude }) {
   const tree = {};
 
   files.forEach((file) => {
+    if (exclude && file.search(exclude) > -1) return;
     const filepath = `${root}/${file}`;
     const fileStat = fs.statSync(filepath);
     const isDir = fileStat.isDirectory();
