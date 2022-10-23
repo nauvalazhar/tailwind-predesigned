@@ -58,7 +58,7 @@ module.exports = async function(options) {
     ...tailwind_predesigned,
   }
 
-  const jsonOptions = { spaces: 4 }
+  const jsonOptions = { spaces: 2 }
   await fse.writeJson(path.join(designOut, 'package.json'), newPackageJson, jsonOptions);
   await fse.writeJson(path.join(designOut, 'design.json'), designJson, jsonOptions);
 
