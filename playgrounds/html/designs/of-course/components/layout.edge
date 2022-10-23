@@ -36,7 +36,7 @@
     </div>
   </nav>
 
-  {{{ await $slots.main() }}}
+  {{{ (await $slots.main()).trim() }}}
 
   <footer class="py-40 2xl:mt-20 bg-blue-900">
     <div class="container mx-auto sm:px-20 px-10 2xl:px-0">
@@ -123,7 +123,7 @@
               '"Segoe UI Emoji"',
               '"Segoe UI Symbol"',
               '"Noto Color Emoji"',
-            ],		
+            ],    
           },
           colors: {
             pink: {
@@ -175,6 +175,7 @@
       },
     }
   </script>
+
 
   @component('components::tailwindcss')
     @screen 2xl {
@@ -238,6 +239,6 @@
 @endsection
 
 @section('beforeend')
-	<script src="js/app.js"></script> 
+  <script src="js/app.js"></script> 
 @endsection
 
