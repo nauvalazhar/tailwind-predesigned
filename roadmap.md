@@ -6,7 +6,7 @@
 
 ## Frontend
 
-- [ ] Implement search design feature
-- [ ] Implement tree files explorer besides monaco editor
-- [ ] Complete docs page (description, author, dependencies)
+- [x] Implement tree files explorer besides monaco editor
+- [x] Complete docs page (description, author, dependencies)
 - [ ] Complete download page
+- [ ] Use state management like redux or smth
