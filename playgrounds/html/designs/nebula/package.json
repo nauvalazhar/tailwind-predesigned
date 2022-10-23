@@ -1,0 +1,20 @@
+{
+  "name": "nebula",
+  "description": "a design by tailwind-predesigned",
+  "author": "Nauval (https://github.com/nauvalazhar)",
+  "tailwind_predesigned": {
+    "name": "Nebula",
+    "description": "Hero for cloud hosting provider.",
+    "techs": [
+      "html"
+    ],
+    "tech": "html",
+    "type": "block",
+    "category": "hero"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
+
+

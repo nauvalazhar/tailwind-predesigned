@@ -1,12 +1,12 @@
 {
-    "name": "Large Login",
-    "description": "Login page with large background image on the right.",
-    "path": "block/login/large-login",
-    "filepath": "block/login/large-login.json",
-    "techs": [
-        "html"
-    ],
-    "tech": "html",
-    "type": "block",
-    "category": "login"
+  "name": "Large Login",
+  "description": "Login page with large background image on the right.",
+  "path": "block/login/large-login",
+  "filepath": "block/login/large-login.json",
+  "techs": [
+    "html"
+  ],
+  "tech": "html",
+  "type": "block",
+  "category": "login"
 }

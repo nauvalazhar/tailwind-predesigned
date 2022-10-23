@@ -32,16 +32,8 @@ function Source() {
   const code = source ? source.data : '';
   const language = source ? determineLanguage(file) : '';
 
-  if (isLoading) {
-    return (
-      <div className="grid place-items-center h-full">
-        <LoaderIcon className="w-20 text-white/50 animate-spin" />
-      </div>
-    );
-  }
-
   // the file other than 'codes' is not requested via hooks
-  if (isError && isError.status === 404) {
+  if (!isLoading && isError && isError.status === 404) {
     return (
       <EmptyState title="File not found" icon="👀">
         What are you trying to find? File could not be found, report an issue if
@@ -50,7 +42,7 @@ function Source() {
     );
   }
 
-  if (!isFileSupported) {
+  if (!isLoading && !isFileSupported) {
     return (
       <EmptyState title="What kind of file is this?!" icon="🤯">
         At this time we do not support files with the extension &apos;
@@ -61,11 +53,19 @@ function Source() {
 
   return (
     <div className="h-full relative overflow-auto">
-      {isImages(fileExtension) && <ImageViewer src={fileSrc} />}
-      {isVideos(fileExtension) && (
-        <VideoViewer src={fileSrc} type={`video/${fileExtension}`} />
+      {isImages(fileExtension) && (
+        <ImageViewer src={fileSrc} loading={isLoading} />
       )}
-      {isCodes(fileExtension) && <CodeViewer code={code} language={language} />}
+      {isVideos(fileExtension) && (
+        <VideoViewer
+          src={fileSrc}
+          type={`video/${fileExtension}`}
+          loading={isLoading}
+        />
+      )}
+      {isCodes(fileExtension) && (
+        <CodeViewer code={code} language={language} loading={isLoading} />
+      )}
     </div>
   );
 }

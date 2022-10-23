@@ -23,6 +23,7 @@ export default async function handler(req, res) {
     root: rootDesignPath,
     base: rootDesignPath,
     staticPath: path.join('/', designPath),
+    exclude: /design\.json/,
   });
 
   const json = await fse.readJson(filepath);

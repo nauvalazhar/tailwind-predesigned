@@ -1,12 +1,12 @@
 {
-    "name": "Simple Login",
-    "description": "Login page with simple design.",
-    "path": "block/login/simple-login",
-    "filepath": "block/login/simple-login.json",
-    "techs": [
-        "html"
-    ],
-    "tech": "html",
-    "type": "block",
-    "category": "login"
+  "name": "Simple Login",
+  "description": "Login page with simple design.",
+  "path": "block/login/simple-login",
+  "filepath": "block/login/simple-login.json",
+  "techs": [
+    "html"
+  ],
+  "tech": "html",
+  "type": "block",
+  "category": "login"
 }

@@ -23,4 +23,6 @@ export { default as Explorer } from './Explorer';
 export { default as ImageViewer } from './ImageViewer';
 export { default as VideoViewer } from './VideoViewer';
 export { default as CodeViewer } from './CodeViewer';
+export { default as CopyBtn } from './CopyBtn';
+export { default as LoadingOverlay } from './LoadingOverlay';
 export * from './Icons';

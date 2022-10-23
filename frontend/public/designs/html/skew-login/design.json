@@ -1,12 +1,12 @@
 {
-    "name": "Skew Login",
-    "description": "Login page with skew style.",
-    "path": "block/login/skew-login",
-    "filepath": "block/login/skew-login.json",
-    "techs": [
-        "html"
-    ],
-    "tech": "html",
-    "type": "block",
-    "category": "login"
+  "name": "Skew Login",
+  "description": "Login page with skew style.",
+  "path": "block/login/skew-login",
+  "filepath": "block/login/skew-login.json",
+  "techs": [
+    "html"
+  ],
+  "tech": "html",
+  "type": "block",
+  "category": "login"
 }
