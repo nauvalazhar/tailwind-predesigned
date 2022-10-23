@@ -21,7 +21,7 @@ export function useDesigns() {
 
   return {
     data,
-    loadingDesigns: !error && !data,
+    isLoading: !error && !data,
     isError: error,
   };
 }
@@ -50,7 +50,5 @@ export function useDesign(name) {
 }
 
 export function useSourceCode(file) {
-  const isFileCode = isCodes(fileExt(file));
-
-  return useGetDesign(null, `/api/code`, { file }, !isFileCode);
+  return useGetDesign(null, `/api/code`, { file });
 }

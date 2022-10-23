@@ -12,17 +12,16 @@ import { useDesign } from '@hooks';
 import Head from 'next/head';
 
 function Editor() {
-  const { data: design, isLoading: loadingDesign } = useDesign();
+  const { data: design, isError } = useDesign();
   const [{ mode }] = useEditorContext();
 
-  if (!design && !loadingDesign) {
+  if (isError && isError.status === 404) {
     return (
       <EmptyState
         title="Sorry, the design you are looking for does not exist"
         icon="🥺">
-        Our mistake was not having the design you were looking for, but maybe
-        <br />
-        we will create one in the future, or you can contribute.
+        Our mistake was not having the design you were looking for, but maybe we
+        will create one in the future.
       </EmptyState>
     );
   }

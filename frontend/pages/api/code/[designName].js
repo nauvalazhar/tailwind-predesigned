@@ -1,4 +1,4 @@
-import { publicDesignPath } from '@helpers';
+import { publicDesignPath, fileExt, isCodes } from '@helpers';
 import fs from 'fs';
 import path from 'path';
 
@@ -9,10 +9,17 @@ export default async function handler(req, res) {
   const filepath = path.join(process.cwd(), publicDesignPath(designName, file));
 
   if (!fs.existsSync(filepath) || !file) {
-    return res.status(404).end();
+    return res.status(404).json({ message: 'No source found' });
   }
 
-  const code = await fs.promises.readFile(filepath, 'utf8');
+  // only codes are allowed
+  if (!isCodes(fileExt(file))) {
+    return res
+      .status(200)
+      .json({ message: 'Source found but no content given' });
+  }
 
-  return res.status(200).json({ code });
+  const data = await fs.promises.readFile(filepath, 'utf8');
+
+  return res.status(200).json({ data, message: 'Source code content' });
 }

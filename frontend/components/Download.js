@@ -2,11 +2,11 @@ import { useDesign } from '@hooks';
 import { HelpIcon, Popover } from '@components';
 
 function Download() {
-  const { data, isLoading: loadingDesign } = useDesign();
+  const { data, isLoading } = useDesign();
 
-  if (loadingDesign) return <div>Loading</div>;
+  if (isLoading) return <div>Loading</div>;
 
-  const design = data.data;
+  const design = data ? data.data : {};
   const command = design
     ? `npx tailwind-predesigned -d ${design.packageJson.name}`
     : 'Loading command';

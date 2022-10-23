@@ -5,7 +5,7 @@ import { EmptyState, LoaderIcon } from '@components';
 import clsx from 'clsx';
 
 function Preview() {
-  const { data: design, isLoading: loadingDesign } = useDesign();
+  const { data: design, isLoading } = useDesign();
   const [{ size }, dispatch] = useEditorContext();
   const previewFrame = useRef(null);
   const [isFrameLoaded, setIsFrameLoaded] = useState(false);
@@ -37,14 +37,10 @@ function Preview() {
 
   return (
     <div className="w-full h-full relative flex justify-center bg-neutral-900">
-      {(loadingDesign || !isFrameLoaded) && (
+      {(isLoading || !isFrameLoaded) && (
         <EmptyState
           title="Loading Preview"
-          icon={
-            <div>
-              <LoaderIcon className="w-16 text-white animate-spin" />
-            </div>
-          }
+          icon={<LoaderIcon className="w-16 text-white/50 animate-spin" />}
           className="absolute z-10 z-10 bg-neutral-900">
           Maybe it will take some time, let&apos;s have a drink first.
         </EmptyState>
