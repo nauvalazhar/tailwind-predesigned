@@ -11,9 +11,9 @@ function FilesViewer() {
   const {
     query: { slug, f: file },
   } = router;
-  const { data: design, isLoading: loadingDesign } = useDesign();
+  const { data: design, isLoading } = useDesign();
   const [{ mode }, dispatch] = useEditorContext();
-  const [selected, setSelected] = useState(file || '');
+  const [selected, setSelected] = useState(file || 'index.html');
 
   // this will preserve privious design selected path
   // and change the selected design path on every design change
@@ -40,8 +40,8 @@ function FilesViewer() {
     });
   }
 
-  if (loadingDesign) return <div>Loading</div>;
-  if (!design && !loadingDesign) return <div>Select design first</div>;
+  if (isLoading) return <div>Loading</div>;
+  if (!design && !isLoading) return <div>Select design first</div>;
 
   return (
     <Tree

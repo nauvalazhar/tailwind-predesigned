@@ -11,7 +11,7 @@ function TreeViewer() {
     query: { slug },
   } = router;
 
-  const { data: designs, loadingDesigns } = useDesigns();
+  const { data: designs, isLoading: isLoadingDesigns } = useDesigns();
   const { data: design } = useDesign();
   const [{ mode }, dispatch] = useEditorContext();
   const [selected, setSelected] = useState('');
@@ -43,7 +43,7 @@ function TreeViewer() {
     });
   }
 
-  if (loadingDesigns) return <div>Loading</div>;
+  if (isLoadingDesigns) return <div>Loading</div>;
 
   // wait for selected
   if (design && !selected) return [];

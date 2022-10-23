@@ -20,4 +20,7 @@ export { default as GithubBtn } from './GithubBtn';
 export { default as Collapsible } from './Collapsible';
 export { default as Popover } from './Popover';
 export { default as Explorer } from './Explorer';
+export { default as ImageViewer } from './ImageViewer';
+export { default as VideoViewer } from './VideoViewer';
+export { default as CodeViewer } from './CodeViewer';
 export * from './Icons';

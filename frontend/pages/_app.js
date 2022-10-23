@@ -5,6 +5,20 @@ import { EditorProvider } from '@contexts/EditorContext';
 import { sizes, MODE_PREVIEW, TREE_MODE_DESIGNS } from '@consts';
 import { SWRConfig } from 'swr';
 
+const fetcher = async (url) => {
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    const error = new Error('An error occurred while fetching the data.');
+    // Attach extra info to the error object.
+    error.info = await res.json();
+    error.status = res.status;
+    throw error;
+  }
+
+  return res.json();
+};
+
 function MyApp({ Component, pageProps }) {
   const Layout = Component.getLayout || (({ children }) => children);
 
@@ -29,8 +43,7 @@ function MyApp({ Component, pageProps }) {
         }}>
         <SWRConfig
           value={{
-            fetcher: (resource, init) =>
-              fetch(resource, init).then((res) => res.json()),
+            fetcher,
           }}>
           <Layout>
             <Component {...pageProps} />

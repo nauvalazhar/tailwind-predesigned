@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   const filepath = path.join(rootDesignPath, 'design.json');
 
   if (!fs.existsSync(filepath)) {
-    return res.status(404).end();
+    return res.status(404).json({ message: 'No design found' });
   }
 
   const designTree = await fs.promises.readdir(rootDesignPath);
@@ -32,5 +32,7 @@ export default async function handler(req, res) {
   const data = { ...json, packageJson, tree };
 
   const preview = path.join('/', designPath, 'index.html');
-  return res.status(200).json({ data: { ...data, preview } });
+  return res
+    .status(200)
+    .json({ data: { ...data, preview }, message: 'Detail design data' });
 }

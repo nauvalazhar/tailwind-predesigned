@@ -8,7 +8,7 @@ import { ExternalIcon } from '@components';
 import clsx from 'clsx';
 
 function Docs() {
-  const { data, isLoading: loadingDesign } = useDesign();
+  const { data, isLoading } = useDesign();
   const [, dispatch] = useEditorContext();
 
   function gotoDownload() {
@@ -18,15 +18,16 @@ function Docs() {
     });
   }
 
-  const design = data ? data.data : {};
+  if (isLoading) return <div>Loading</div>;
 
+  const design = data ? data.data : {};
   const [authorName, authorUrl] = extractAuthor(design.packageJson.author);
 
   return (
     <section
       className={clsx(
         'p-8 text-white prose prose-invert min-w-full transition-all',
-        loadingDesign ? 'opacity-0' : 'opacity-100'
+        isLoading ? 'opacity-0' : 'opacity-100'
       )}>
       <h2>{design.name}</h2>
       <p className="lead">{design.description}</p>
